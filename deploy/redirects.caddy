@@ -1,0 +1,50 @@
+# Redirections 301 — à conserver au moins 12 mois après la mise en ligne.
+# Préserve le référencement acquis par l'ancien site financiale.fr (CMS Flow, pages en .html)
+# et les URL de la préversion Framer.
+
+route {
+	# --- Ancien site financiale.fr (Flow) ---------------------------------
+	redir /index.html / permanent
+	redir /financiale.html /financiale permanent
+	redir /contact.html /contact permanent
+	redir /mentions-legales.html /mentions-legales permanent
+	redir /myfinanciale.html /contact permanent
+	redir /chef-d-entreprise.html /accompagnement-dirigeant permanent
+	redir /profession_liberale.html /nos-expertises permanent
+	redir /salarie.html /nos-expertises permanent
+	redir /retraite.html /preparer-votre-retraite permanent
+
+	redir /catalogue/vos-besoins.html /nos-expertises permanent
+	redir /catalogue/vos-besoins/anticiper-votre-transmission.html /aide-juridique-fiscale permanent
+	redir /catalogue/vos-besoins/comment-generer-des-revenus-complementaires.html /preparer-votre-retraite permanent
+	redir /catalogue/vos-besoins/comment-optimiser-sa-fiscalite.html /aide-juridique-fiscale permanent
+	redir /catalogue/vos-besoins/proteger-vos-proches.html /courtage-assurance permanent
+
+	redir /catalogue/nos-expertises.html /nos-expertises permanent
+	redir /catalogue/nos-expertises/accompagnement-du-dirigeant-dentreprise.html /accompagnement-dirigeant permanent
+	redir /catalogue/nos-expertises/aide-juridique-et-fiscale.html /aide-juridique-fiscale permanent
+	redir /catalogue/nos-expertises/athlete-office.html /sport permanent
+	redir /catalogue/nos-expertises/courtage-dassurance.html /courtage-assurance permanent
+	redir /catalogue/nos-expertises/strategie-et-ingenierie-patrimoniale.html /methodologie-approche-patrimoniale permanent
+	redir /catalogue/nos-expertises/investissements-immobiliers1.html /investissements-immobiliers permanent
+	redir /catalogue/nos-expertises/family-office1.html /family-office permanent
+	redir /catalogue/nos-expertises/preparer-votre-retraite.html /preparer-votre-retraite permanent
+	redir /catalogue/nos-expertises/gestion-financiere1.html /gestion-financiere permanent
+
+	# --- Préversion Framer (URL accentuées) --------------------------------
+	redir "/mentions-l%C3%A9gales" /mentions-legales permanent
+	redir "/mentions-légales" /mentions-legales permanent
+	redir "/blog/expatriation-ce-que-votre-banquier-fran%C3%A7ais-ne-vous-dit-pas-sur-votre-assurance-vie" /blog/expatriation-ce-que-votre-banquier-francais-ne-vous-dit-pas-sur-votre-assurance-vie permanent
+	redir "/blog/ifi-2024-trois-strat%C3%A9gies-l%C3%A9gales-pour-r%C3%A9duire-votre-imp%C3%B4t-sur-la-fortune-immobili%C3%A8re" /blog/ifi-2024-trois-strategies-legales-pour-reduire-votre-impot-sur-la-fortune-immobiliere permanent
+
+	# --- Règles génériques --------------------------------------------------
+	# /page.html -> /page (URL propres), sauf fichiers internes
+	@dothtml {
+		path_regexp dothtml ^/(.+)\.html$
+		not path /404.html
+	}
+	redir @dothtml /{re.dothtml.1} permanent
+	# Barre oblique finale -> sans
+	@trailing path_regexp trailing ^(.+)/$
+	redir @trailing {re.trailing.1} permanent
+}

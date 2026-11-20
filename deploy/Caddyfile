@@ -1,0 +1,72 @@
+# Serveur web Financiale (Caddy) — HTTPS automatique, en-têtes de sécurité, redirections SEO.
+# Le domaine est lu depuis la variable SITE_DOMAIN (voir docker-compose.yml).
+
+{
+	email {$ACME_EMAIL}
+	# Pas de télémétrie, pas d'appel externe hormis le renouvellement des certificats TLS
+}
+
+# Rediriger le domaine nu vers www
+{$SITE_DOMAIN_APEX} {
+	redir https://{$SITE_DOMAIN}{uri} permanent
+}
+
+{$SITE_DOMAIN} {
+	root * /srv/site
+	encode zstd gzip
+
+	# ---------------------------------------------------------------- Sécurité
+	header {
+		Strict-Transport-Security "max-age=63072000; includeSubDomains; preload"
+		X-Content-Type-Options "nosniff"
+		X-Frame-Options "DENY"
+		Referrer-Policy "strict-origin-when-cross-origin"
+		Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+		Cross-Origin-Opener-Policy "same-origin"
+		# Tout est servi depuis ce serveur : aucune ressource tierce autorisée.
+		Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+		-Server
+	}
+
+	# Cache long pour les fichiers versionnés (noms avec empreinte)
+	@hashed path /_astro/*
+	header @hashed Cache-Control "public, max-age=31536000, immutable"
+	@html path *.html /
+	header @html Cache-Control "public, max-age=300, must-revalidate"
+
+	# --------------------------------------------------------- Formulaire
+	handle /api/* {
+		reverse_proxy form:3000
+	}
+
+	# ---------------------------------------------------------- Redirections
+	# Anciennes URL (site Flow actuel et préversion Framer) -> nouvelles pages, en 301.
+	import /etc/caddy/redirects.caddy
+
+	# ------------------------------------------------------- Pages statiques
+	handle {
+		try_files {path} {path}.html {path}/index.html
+		file_server
+	}
+
+	handle_errors {
+		@404 expression {err.status_code} == 404
+		handle @404 {
+			rewrite * /404.html
+			file_server
+		}
+	}
+
+	log {
+		output stdout
+		format filter {
+			wrap console
+			# Anonymisation des adresses IP dans les journaux (RGPD)
+			fields {
+				request>remote_ip ip_mask 16 32
+				request>client_ip ip_mask 16 32
+				request>headers>Cookie delete
+			}
+		}
+	}
+}

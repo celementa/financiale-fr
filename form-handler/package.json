@@ -1,0 +1,10 @@
+{
+  "name": "financiale-form-handler",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "server.mjs",
+  "scripts": { "start": "node server.mjs" },
+  "dependencies": { "nodemailer": "^7.0.0" },
+  "engines": { "node": ">=22" }
+}

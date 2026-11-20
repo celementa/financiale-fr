@@ -1,0 +1,96 @@
+slug: accompagnement-dirigeant
+seo:
+  title: "Accompagnement du dirigeant d'entreprise — Financiale"
+  description: "De la création à la cession, Financiale accompagne les dirigeants sur l'ensemble de leurs enjeux patrimoniaux — professionnels et personnels."
+  image: /images/R1z8F1VOfbVRQu1HHWUpXcdAPi0.jpg
+blocks:
+  - type: hero
+    image: /images/R1z8F1VOfbVRQu1HHWUpXcdAPi0.jpg
+    title: "Vous avez bâti une entreprise.\nProtégez ce qu'elle représente."
+    text: "De la création à la cession, Financiale accompagne les dirigeants sur l'ensemble de leurs enjeux patrimoniaux — professionnels et personnels."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "Des enjeux que vous êtes souvent seul à porter."
+    paragraphs:
+      - "Les décisions d'un dirigeant ont un impact direct sur deux sphères indissociables : l'entreprise et le patrimoine personnel. Fiscalité, rémunération, protection sociale, transmission — chaque choix engage l'ensemble. Et pourtant, la plupart des dirigeants naviguent seuls dans ces décisions."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"Mon entreprise représente l'essentiel de mon patrimoine, je ne sais pas comment m'en détacher intelligemment.\""
+      - "\"Ma rémunération n'est pas optimisée entre salaire, dividendes et épargne salariale, je perds de l'argent chaque année.\""
+      - "\"Je veux céder dans 5 ans mais je n'ai aucune stratégie patrimoniale pour l'après.\""
+    outro: "Financiale accompagne les dirigeants à chaque étape de leur vie entrepreneuriale — avec des experts qui comprennent la réalité du terrain et des solutions adaptées à votre situation spécifique."
+    image: /images/EZnzCTFdXJfa6lnR7PgYpvC049I.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - title: "Architecture de l'entreprise"
+        text: "Holding, structuration juridique, optimisation de l'actif professionnel — nous organisons votre patrimoine d'entreprise pour préparer les prochaines étapes en toute sérénité."
+        image: /images/bNaAGFTjRnkxD568xdHCc8k3ZU.jpg
+      - title: "Préparation & accompagnement à la cession"
+        text: "Structuration en amont, optimisation fiscale du produit de cession, réemploi stratégique des capitaux — nous anticipons chaque étape pour que rien ne soit laissé au hasard."
+        image: /images/FT3pE27xlMwji8rbNEPFdeaxiA.jpg
+      - title: "Protection sociale & prévoyance"
+        text: "Couverture des risques dirigeant, prévoyance incapacité et invalidité, protection des proches — nous identifions et mettons en place les solutions adaptées à votre statut TNS ou assimilé salarié."
+        image: /images/8S6TvD87v0KYZD8hjpKJIjwjIOQ.jpg
+      - title: "Transmission de l'entreprise"
+        text: "Optimisation fiscale, ingénierie juridique, structuration de holdings — nos experts coordonnent les aspects légaux et fiscaux de chaque décision patrimoniale significative."
+        image: /images/ukPJFzEd1xNHnK5jSqqR2b5xC7w.jpg
+      - title: "Optimisation de la rémunération"
+        text: "Arbitrage salaire / dividendes / épargne salariale — nous construisons la structure de rémunération la plus efficiente selon votre statut et votre fiscalité personnelle."
+        image: /images/OF78XlE9AJScRbKkwYWAIctfLCQ.jpg
+
+  - type: focus
+    eyebrow: "Les indemnités de fin de carrière"
+    title: "Indemnités de fin de carrière : une obligation légale, une opportunité fiscale."
+    image: /images/68lXj1sWsLyRvDjRWVT7w5jOLk.jpg
+    paragraphs:
+      - "En tant que dirigeant, vous êtes soumis aux obligations du Code du travail concernant les indemnités de fin de carrière de vos salariés. Une entreprise qui n'anticipe pas cette obligation risque de déséquilibrer sérieusement sa trésorerie au moment des départs en retraite."
+      - "Le contrat IFC — Indemnités de Fin de Carrière — permet de lisser dans le temps le financement de ces indemnités tout en bénéficiant d'avantages fiscaux et sociaux significatifs."
+      - "Les cotisations versées sont déductibles du résultat fiscal de l'entreprise et ne sont pas intégrées dans l'assiette des salaires. Elles ne sont donc soumises ni aux charges sociales, ni à la CSG, ni à la CRDS. Lorsqu'un salarié part à la retraite, l'entreprise se voit verser un capital correspondant au fonds constitué."
+    boxTitle: "Bon à savoir"
+    box:
+      - "Cotisations déductibles du résultat fiscal de l'entreprise"
+      - "Exonération de charges sociales, CSG et CRDS sur les cotisations"
+      - "Vous choisissez librement les catégories de salariés à couvrir"
+      - "Capital versé à l'entreprise au moment du départ en retraite du salarié"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit patrimonial complet", text: "Analyse complète de votre situation — statut juridique, rémunération, actifs personnels et professionnels, fiscalité, prévoyance. Un état des lieux objectif avant toute recommandation." }
+      - { label: "2ème étape", title: "Stratégie personnalisée", text: "Construction d'un plan patrimonial cohérent avec vos objectifs de dirigeant — optimisation immédiate, préparation à la cession, transmission. Documenté, argumenté, validé avec vous chaque année avant la clôture de votre exercice." }
+      - { label: "3ème étape", title: "Suivi dans la durée", text: "Présents à vos côtés à chaque événement significatif — changement de statut, levée de fonds, cession, retraite. Vous ne prenez plus jamais de décision structurante seul." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Aide juridique & fiscale", text: "Optimisation fiscale, structuration juridique, ingénierie patrimoniale pour les situations les plus complexes.", image: /images/UqDUeIjBKDRV5fvFsFtdRkY76w.jpg, href: /aide-juridique-fiscale }
+      - { title: "Family Office", text: "Pour les dirigeants dont le patrimoine dépasse le cadre de l'entreprise et nécessite une coordination globale.", image: /images/yN1OYgVx5PUP9Dtg1IDatab1NuU.jpg, href: /family-office }
+      - { title: "Préparer votre retraite", text: "Anticiper la transition, structurer les revenus complémentaires, préserver votre niveau de vie dans la durée.", image: /images/X5m65PTS6OPBDfXmfonixmif6E.jpg, href: /preparer-votre-retraite }
+
+  - type: cta
+    title: "Votre prochain exercice fiscal est une opportunité."
+    text: "Un expert dirigeant prend contact avec vous sous 48h pour un premier échange confidentiel et sans engagement."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

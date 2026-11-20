@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+import Img from '../components/Img.astro';
+import Arrow from '../components/Arrow.astro';
+import { site, load } from '../lib/data';
+
+const c = load<any>('contact.yaml');
+---
+<Base title={c.seo.title} description={c.seo.description}>
+  <section class="section section--paper contact">
+    <div class="container contact__grid">
+      <div>
+        <h1>{c.title}</h1>
+        <p class="lead contact__intro">{c.text}</p>
+
+        <!-- Envoi vers le service de formulaire auto-hébergé (form-handler/), même domaine. -->
+        <form class="form" method="post" action="/api/contact" data-contact-form novalidate>
+          <div class="form__row">
+            <label><span>Nom*</span><input name="nom" type="text" autocomplete="family-name" required maxlength="100" /></label>
+            <label><span>Prénom*</span><input name="prenom" type="text" autocomplete="given-name" required maxlength="100" /></label>
+          </div>
+          <div class="form__row">
+            <label><span>Adresse e-mail*</span><input name="email" type="email" autocomplete="email" required maxlength="200" /></label>
+            <label><span>Téléphone*</span><input name="telephone" type="tel" autocomplete="tel" required maxlength="40" /></label>
+          </div>
+          <label><span>Ville de résidence</span><input name="ville" type="text" autocomplete="address-level2" maxlength="100" /></label>
+          <div class="form__row">
+            <label><span>Votre profil*</span>
+              <select name="profil" required><option value="">Sélectionner</option>{c.profiles.map((o: string) => <option>{o}</option>)}</select>
+            </label>
+            <label><span>Votre enjeu*</span>
+              <select name="enjeu" required><option value="">Sélectionner</option>{c.topics.map((o: string) => <option>{o}</option>)}</select>
+            </label>
+          </div>
+          <label><span>Horizon de décision</span>
+            <select name="horizon"><option value="">Sélectionner</option>{c.horizons.map((o: string) => <option>{o}</option>)}</select>
+          </label>
+          <label><span>Message*</span>
+            <textarea name="message" rows="5" required maxlength="4000"
+              placeholder="Décrivez brièvement votre situation ou vos questions — ces informations aideront votre conseiller à préparer votre premier échange."></textarea>
+          </label>
+
+          <!-- Piège à robots : champ invisible qui doit rester vide -->
+          <div class="form__hp" aria-hidden="true">
+            <label>Ne pas remplir<input name="website" type="text" tabindex="-1" autocomplete="off" /></label>
+          </div>
+
+          <p class="form__privacy">{c.privacyNotice} <a href="/mentions-legales#donnees">En savoir plus</a>.</p>
+
+          <button type="submit" class="btn">
+            <span>{c.submitLabel}</span><span class="btn__arrow"><Arrow size={14} /></span>
+          </button>
+          <p class="form__status" role="status" aria-live="polite" data-status hidden></p>
+        </form>
+      </div>
+
+      <aside class="contact__aside">
+        <div class="contact__images">
+          {c.images.map((src: string) => <div class="media"><Img src={src} alt="" sizes="(max-width: 900px) 45vw, 300px" /></div>)}
+        </div>
+        <h2 class="h4">{c.officeTitle}</h2>
+        <ul class="contact__info">
+          <li><a href={`tel:${site.phoneIntl}`}><span class="h5">Appel</span><span>{site.phone}</span></a></li>
+          <li><a href={site.mapsUrl} rel="noopener" target="_blank"><span class="h5">Notre bureau</span><span>{site.address.street} {site.address.postalCode} {site.address.city}</span></a></li>
+          <li><a href={`mailto:${site.email}`}><span class="h5">E-mail</span><span>{site.email}</span></a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Base>
+
+<script define:vars={{ ok: c.successMessage, ko: c.errorMessage }}>
+  const form = document.querySelector('[data-contact-form]');
+  const status = form?.querySelector('[data-status]');
+  const qs = new URLSearchParams(location.search);
+  if (status && (qs.has('envoye') || qs.has('erreur'))) { status.hidden = false; status.textContent = qs.has('envoye') ? ok : ko; }
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new URLSearchParams(new FormData(form)),
+      });
+      if (!res.ok) throw new Error(String(res.status));
+      form.reset();
+      status.textContent = ok;
+    } catch {
+      status.textContent = ko;
+    } finally {
+      status.hidden = false;
+      btn.disabled = false;
+    }
+  });
+</script>
+
+<style>
+  .contact__grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(2.5rem, 6vw, 6rem); align-items: start; }
+  .contact__intro { margin: 1.5rem 0 3rem; max-width: 32rem; }
+  .form { display: grid; gap: 1.25rem; }
+  .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .form label { display: grid; gap: .45rem; font-size: var(--fs-small); font-weight: 500; }
+  .form input, .form select, .form textarea {
+    width: 100%; padding: .85rem 1rem; background: var(--white);
+    border: 1px solid var(--line-dark); border-radius: 0; font-size: 1rem; font-weight: 400;
+  }
+  .form input:focus, .form select:focus, .form textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 3px rgba(27,45,69,.12); }
+  .form textarea { resize: vertical; }
+  .form .btn { justify-self: start; cursor: pointer; }
+  .form .btn:disabled { opacity: .6; cursor: wait; }
+  .form__hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .form__privacy { font-size: .8125rem; color: rgba(8,8,8,.6); }
+  .form__privacy a { text-decoration: underline; }
+  .form__status { font-weight: 500; color: var(--navy); }
+
+  .contact__aside { position: sticky; top: calc(var(--header-h) + 2rem); }
+  .contact__images { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2.5rem; }
+  .contact__images .media { aspect-ratio: 639 / 798; }
+  .contact__info { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+  .contact__info a { display: flex; flex-direction: column; gap: .2rem; padding: 1rem 0; border-bottom: 1px solid var(--line-dark); font-size: var(--fs-small); }
+  .contact__info a:hover .h5 { color: var(--bronze); }
+  @media (max-width: 900px) {
+    .contact__grid { grid-template-columns: 1fr; }
+    .contact__aside { position: static; }
+    .form__row { grid-template-columns: 1fr; }
+  }
+</style>

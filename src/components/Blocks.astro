@@ -1,0 +1,38 @@
+---
+/** Rend la liste de blocs d'une page (src/content/pages/*.yaml). */
+import Hero from './blocks/Hero.astro';
+import About from './blocks/About.astro';
+import Pillars from './blocks/Pillars.astro';
+import Services from './blocks/Services.astro';
+import SportTeaser from './blocks/SportTeaser.astro';
+import Process from './blocks/Process.astro';
+import Cta from './blocks/Cta.astro';
+import Stats from './blocks/Stats.astro';
+import StatsBanner from './blocks/StatsBanner.astro';
+import Context from './blocks/Context.astro';
+import Quote from './blocks/Quote.astro';
+import Tabs from './blocks/Tabs.astro';
+import Carousel from './blocks/Carousel.astro';
+import Testimonial from './blocks/Testimonial.astro';
+import Team from './blocks/Team.astro';
+import TeamCarousel from './blocks/TeamCarousel.astro';
+import Features from './blocks/Features.astro';
+import Comparison from './blocks/Comparison.astro';
+import Story from './blocks/Story.astro';
+import Values from './blocks/Values.astro';
+import Focus from './blocks/Focus.astro';
+import Related from './blocks/Related.astro';
+
+const registry: Record<string, any> = {
+  hero: Hero, about: About, pillars: Pillars, services: Services, sportTeaser: SportTeaser,
+  process: Process, cta: Cta, stats: Stats, statsBanner: StatsBanner, context: Context,
+  quote: Quote, tabs: Tabs, carousel: Carousel, testimonial: Testimonial, team: Team,
+  teamCarousel: TeamCarousel, features: Features, comparison: Comparison, story: Story,
+  values: Values, focus: Focus, related: Related,
+};
+const { blocks = [] } = Astro.props;
+---
+{blocks.map((b: any) => {
+  const C = registry[b.type];
+  return C ? <C {...b} /> : null;
+})}

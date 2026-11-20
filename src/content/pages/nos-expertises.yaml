@@ -1,0 +1,30 @@
+slug: nos-expertises
+seo:
+  title: "Nos expertises — Financiale, gestion de patrimoine à Paris"
+  description: "Neuf domaines d'expertise couvrant le spectre complet de la gestion de patrimoine pour les dirigeants, les familles et les situations les plus complexes."
+  image: /images/zN3K2nlJ4cYjpOJYrvxMGaDJxg0.png
+blocks:
+  - type: hero
+    image: /images/zN3K2nlJ4cYjpOJYrvxMGaDJxg0.png
+    eyebrow: "Nos expertises"
+    title: "L'intégralité de vos enjeux patrimoniaux. Une seule équipe."
+    text: "Neuf domaines d'expertise couvrant le spectre complet de la gestion de patrimoine pour les dirigeants, les familles et les situations les plus complexes."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: services
+    tone: light
+    eyebrow: "Ce qu'on vous propose"
+    title: "Nos expertises."
+    text: "Chaque expertise est portée par des conseillers spécialisés, coordonnés pour traiter votre situation dans sa globalité."
+    asideImage: /images/OGB7YSYc43R2h0mY3dL0JKgU4.jpg
+    items:
+      - { title: "Accompagnement du dirigeant d'entreprise", text: "Rémunération, holding, cession, transmission — les enjeux patrimoniaux d'un dirigeant sont indissociables de son entreprise. Nous construisons une stratégie qui couvre les deux.", image: /images/fEezyjgsNZp0tpLc5LsV67mDrzc.jpg, href: /accompagnement-dirigeant }
+      - { title: "Aide juridique et fiscale", text: "Optimisation fiscale, structuration juridique, ingénierie patrimoniale — nos experts coordonnent les dimensions légales et fiscales de votre patrimoine pour chaque décision significative.", image: /images/zvgVs1u7HU5QjtbOBagQmyo3JM.jpg, href: /aide-juridique-fiscale }
+      - { title: "Accompagnement du sportif de haut niveau", text: "Carrière courte, revenus complexes, mobilité internationale — les sportifs de haut niveau ont des enjeux patrimoniaux uniques. Financiale a construit une offre dédiée depuis plus de vingt ans.", image: /images/GA1URVgmWKecgHCSMm2nLdNvrQ.png, href: /sport }
+      - { title: "Family Office", text: "Coordination globale de vos actifs, reporting mensuel institutionnel, gouvernance familiale — un accompagnement dédié pour les patrimoines qui exigent un suivi structuré et confidentiel.", image: /images/Wu3KCOwPoK3ZAIkD59ijJLImnu4.jpg, href: /family-office }
+      - { title: "Courtage d'assurance", text: "Prévoyance, protection des proches, assurance-vie — nous sélectionnons les meilleures solutions du marché sans contrainte de distribution, en toute indépendance et transparence.", image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg, href: /courtage-assurance }
+      - { title: "Méthodologie et approche patrimoniale", text: "Notre méthode repose sur un audit global avant toute recommandation. Une vision d'ensemble objective, pour construire une architecture patrimoniale cohérente avec vos projets de vie.", image: /images/fI0y0o6X2hSAf1qndKPoirRBQ.jpg, href: /methodologie-approche-patrimoniale }
+      - { title: "Investissements immobiliers", text: "Immobilier locatif, SCI, SCPI, démembrement — nous identifions les opportunités adaptées à votre situation fiscale et patrimoniale pour constituer un actif immobilier solide et durable.", image: /images/q0jp5uyALv57z4VYT669LCrnJNo.jpg, href: /investissements-immobiliers }
+      - { title: "Préparer votre retraite", text: "PER, assurance-vie, revenus complémentaires, structuration de patrimoine — nous anticipons avec vous la transition vers la retraite pour que votre niveau de vie soit préservé dans la durée.", image: /images/X5m65PTS6OPBDfXmfonixmif6E.jpg, href: /preparer-votre-retraite }
+      - { title: "Gestion financière", text: "Allocation d'actifs, mandat de gestion, gestion conseillée, produits structurés — nous pilotons ou accompagnons la gestion de vos actifs financiers avec rigueur et indépendance.", image: /images/jaxHO9Fn3ZfYeGHgjoqH2OfRqs.jpg, href: /gestion-financiere }
+

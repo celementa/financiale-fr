@@ -1,0 +1,88 @@
+slug: investissements-immobiliers
+seo:
+  title: "Investissements immobiliers — Financiale"
+  description: "Financiale vous accompagne dans une stratégie immobilière globale et cohérente — de l'investissement locatif à la pierre papier, du neuf à l'ancien."
+  image: /images/jhKRVZIOXcHBpVAOuR76Qq8Jc.jpg
+blocks:
+  - type: hero
+    image: /images/jhKRVZIOXcHBpVAOuR76Qq8Jc.jpg
+    title: "L'immobilier comme levier patrimonial.\nPas comme placement par défaut."
+    text: "Financiale vous accompagne dans une stratégie immobilière globale et cohérente — de l'investissement locatif à la pierre papier, du neuf à l'ancien, du direct à l'indirect."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "L'immobilier bien choisi change la trajectoire d'un patrimoine."
+    paragraphs:
+      - "L'immobilier est la classe d'actifs privilégiée des Français — et pour cause. Levier de crédit, revenus complémentaires, optimisation fiscale, transmission — ses atouts sont réels. Mais un investissement immobilier mal structuré, mal financé ou mal positionné dans un patrimoine global peut devenir un boulet plutôt qu'un levier."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"Je veux investir dans l'immobilier mais je ne sais pas quel dispositif est adapté à ma situation fiscale.\""
+      - "\"J'ai plusieurs biens en nom propre et je me demande si une SCI n'aurait pas été plus avantageuse.\""
+      - "\"Je cherche à générer des revenus complémentaires sans les contraintes de la gestion locative directe.\""
+    outro: "Financiale intègre l'immobilier dans votre stratégie patrimoniale globale — pas comme un produit isolé, mais comme un levier cohérent avec vos objectifs fiscaux, votre capacité d'emprunt et vos projets de vie."
+    image: /images/smc4eJSKPDF5V54z1YZE7zLtc6Y.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - { title: "Immobilier locatif neuf", text: "Pinel, VEFA, logements neufs — nous sélectionnons les programmes adaptés à votre situation fiscale et patrimoniale, en coordination avec nos partenaires promoteurs.", image: /images/GYBT70lGLkofkYks9wHLHsAEh0.jpg }
+      - { title: "Immobilier locatif meublé (LMNP)", text: "Résidences services, bail commercial, statut LMNP — des revenus locatifs faiblement imposés avec des contraintes de gestion allégées et un rendement attractif.", image: /images/zELBuCoeIIsvAQfafIJeREVU.jpg }
+      - { title: "Démembrement de propriété immobilier", text: "Acquisition en nue-propriété à prix décoté, usufruit temporaire institutionnel — un mécanisme puissant pour constituer un patrimoine immobilier à moindre coût, sans aléas locatifs.", image: /images/d1snib5hNIT79OHPMFeyT1sT6lM.jpg }
+      - { title: "Pierre papier — SCPI & OPCI", text: "Investissement immobilier collectif, accessible en direct ou via assurance-vie — mutualisation des risques, diversification géographique et sectorielle, gestion entièrement déléguée.", image: /images/sgONisikFiOF463PX4PFav1LIo.jpg }
+      - { title: "Immobilier ancien à rénover", text: "Malraux, Monument Historique, déficit foncier, Pinel ancien — nous identifions les opportunités dans l'ancien pour conjuguer valorisation patrimoniale et optimisation fiscale.", image: /images/xNtp954dzYjgQg0wmXNhlmjcg.jpg }
+      - { title: "Structuration & ingénierie immobilière", text: "SCI, SARL de famille, mode de détention optimal — nous structurons vos opérations immobilières pour maximiser l'efficience fiscale et faciliter la transmission.", image: /images/hFEH0AKpnfKMrktXOGQzCfv7sT0.jpg }
+
+  - type: focus
+    eyebrow: "Le statut LMNP"
+    title: "Location meublée gérée : revenus quasi nets d'impôts."
+    image: /images/IP46AzRY8WdjOrHTZlj4E0laS8.jpg
+    paragraphs:
+      - "Le statut de Loueur en Meublé Non Professionnel (LMNP) est l'un des dispositifs les plus efficaces pour générer des revenus complémentaires faiblement fiscalisés. Il s'applique aux résidences services — étudiantes, séniors, EHPAD, tourisme d'affaires — gérées par un exploitant professionnel via un bail commercial."
+      - "Le propriétaire délègue entièrement la gestion à l'exploitant et perçoit ses loyers sans contraintes locatives. Sur le plan fiscal, le régime réel permet d'amortir le bien sur plusieurs dizaines d'années, générant des charges déductibles qui effacent quasi intégralement la fiscalité sur les revenus locatifs."
+      - "Ce dispositif s'intègre particulièrement bien dans une stratégie de préparation à la retraite ou de diversification patrimoniale — à condition d'être bien structuré en amont."
+    boxTitle: "Bon à savoir"
+    box:
+      - "Récupération de la TVA à 20% sur le prix d'achat, sous conditions"
+      - "Revenus locatifs quasi nets d'impôts grâce à l'amortissement comptable"
+      - "Rendement net variant entre 3,8% et 4,5% HT selon les programmes"
+      - "Bail commercial avec l'exploitant — aucune contrainte de gestion pour le propriétaire"
+      - "Eligible au sein d'une SCI à l'IS pour optimisation supplémentaire"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit patrimonial & capacité d'investissement", text: "Analyse de votre situation fiscale, de votre capacité d'emprunt et de vos objectifs patrimoniaux. Nous identifions le type d'investissement immobilier le plus adapté avant toute recommandation de bien ou de dispositif." }
+      - { label: "2ème étape", title: "Sélection & structuration", text: "Identification des opportunités via notre réseau de partenaires, choix du dispositif fiscal optimal, structuration juridique de l'opération — SCI, nom propre, démembrement. Chaque décision est argumentée et documentée." }
+      - { label: "3ème étape", title: "Accompagnement & suivi", text: "Coordination avec notaires, promoteurs et gestionnaires, suivi de la mise en place, points réguliers sur la performance de vos actifs immobiliers dans le contexte de votre patrimoine global." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Aide juridique & fiscale", text: "La stratégie patrimoniale s'appuie sur une ingénierie juridique et fiscale rigoureuse — nos experts coordonnent les deux.", image: /images/UqDUeIjBKDRV5fvFsFtdRkY76w.jpg, href: /aide-juridique-fiscale }
+      - { title: "Préparer votre retraite", text: "L'immobilier locatif est l'un des leviers les plus efficaces pour générer des revenus complémentaires à la retraite.", image: /images/qTAb4OvW8gjSZHKC0ZBIH8ia4xA.jpg, href: /preparer-votre-retraite }
+      - { title: "Courtage d'assurance", text: "Garanties locatives, assurance emprunteur, prévoyance — protéger vos investissements immobiliers à chaque étape.", image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg, href: /courtage-assurance }
+
+  - type: cta
+    title: "Votre prochain investissement immobilier mérite une analyse complète."
+    text: "Un expert immobilier Financiale prend contact avec vous sous 48h pour un premier échange confidentiel et sans engagement."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

@@ -1,0 +1,48 @@
+# Intégration et déploiement continus (Forgejo Actions, syntaxe compatible GitHub/Gitea Actions).
+# - Chaque proposition de modification (pull request) : vérification du contenu + compilation.
+# - Chaque fusion sur « main » : mise en ligne sur le serveur UE via SSH.
+#
+# Secrets à définir dans le dépôt (Paramètres > Actions > Secrets) :
+#   DEPLOY_HOST      adresse du serveur (ex. 203.0.113.10)
+#   DEPLOY_USER      utilisateur SSH (ex. deploy)
+#   DEPLOY_SSH_KEY   clé privée SSH dédiée au déploiement
+#   DEPLOY_PATH      dossier du dépôt sur le serveur (ex. /srv/financiale)
+
+name: build-and-deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: docker
+    container: node:22-bookworm
+    steps:
+      - uses: actions/checkout@v4
+      - run: npm ci
+      - name: Vérifier le contenu (images, liens, équipe)
+        run: npm run check
+      - name: Compiler le site
+        env:
+          STRICT_ASSETS: '1'
+        run: npm run build
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: docker
+    container: node:22-bookworm
+    steps:
+      - name: Mettre en ligne
+        env:
+          SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          HOST: ${{ secrets.DEPLOY_HOST }}
+          USER: ${{ secrets.DEPLOY_USER }}
+          DIR: ${{ secrets.DEPLOY_PATH }}
+        run: |
+          apt-get update -qq && apt-get install -y -qq openssh-client >/dev/null
+          mkdir -p ~/.ssh && echo "$SSH_KEY" > ~/.ssh/id_ed25519 && chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H "$HOST" >> ~/.ssh/known_hosts
+          ssh "$USER@$HOST" "cd $DIR && git fetch --quiet origin main && git reset --hard origin/main && docker compose up -d --build --remove-orphans && docker image prune -f"

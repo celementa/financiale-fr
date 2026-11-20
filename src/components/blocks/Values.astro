@@ -1,0 +1,27 @@
+---
+/** Valeurs : trois cartes claires sur fond bleu. */
+import Heading from '../Heading.astro';
+const { eyebrow, title, text, items = [] } = Astro.props;
+---
+<section class="section section--navy values">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="section-head">
+      <Heading as="h2" text={title} class="h3 values__title" />
+      {text && <p>{text}</p>}
+    </div>
+    <ul class="values__grid">
+      {items.map((it: any) => (
+        <li class="reveal"><h3 class="h4">{it.title}</h3><p>{it.text}</p></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .values :global(.values__title) { color: var(--cream); }
+  .values__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .values__grid li { background: var(--cream); color: var(--navy); padding: clamp(1.5rem, 3vw, 2.5rem); display: flex; flex-direction: column; gap: 4rem; justify-content: space-between; min-height: 22rem; }
+  .values__grid p { font-size: var(--fs-small); }
+  @media (max-width: 900px) { .values__grid { grid-template-columns: 1fr; } .values__grid li { min-height: 0; gap: 1.5rem; } }
+</style>

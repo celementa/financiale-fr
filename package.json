@@ -1,0 +1,26 @@
+{
+  "name": "financiale-website",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site web Financiale (financiale.fr) — Astro, hébergement UE",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "node scripts/check-content.mjs",
+    "fetch-assets": "node scripts/fetch-assets.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@fontsource/spectral": "^5.3.0",
+    "@fontsource/tasa-orbiter": "^5.3.0",
+    "astro": "^7.4.13",
+    "yaml": "^2.9.1"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.5"
+  }
+}

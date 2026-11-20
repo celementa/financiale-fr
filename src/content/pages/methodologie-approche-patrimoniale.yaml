@@ -1,0 +1,86 @@
+slug: methodologie-approche-patrimoniale
+seo:
+  title: "Méthodologie et approche patrimoniale — Financiale"
+  description: "Financiale structure votre patrimoine avec une approche globale, des solutions personnalisées et un suivi dans la durée."
+  image: /images/C6IOrTxt7g80JYySp5ZLhduaQ.jpg
+blocks:
+  - type: hero
+    image: /images/C6IOrTxt7g80JYySp5ZLhduaQ.jpg
+    title: "Votre patrimoine au service\nde vos projets de vie."
+    text: "Financiale structure votre patrimoine avec une approche globale, des solutions personnalisées et un suivi dans la durée — du premier entretien à la réalisation de vos objectifs."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "Un patrimoine sans stratégie globale, c'est un patrimoine qui subit."
+    paragraphs:
+      - "Beaucoup de décisions patrimoniales sont prises au fil de l'eau — un investissement ici, un contrat là, une optimisation fiscale ponctuelle. Sans vision d'ensemble, ces décisions peuvent se contredire, créer des incohérences et laisser des opportunités inexploitées."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"J'ai des actifs financiers, de l'immobilier, une entreprise — mais je n'ai jamais eu une vision consolidée de l'ensemble.\""
+      - "\"Ma situation a beaucoup évolué ces dernières années mais ma stratégie patrimoniale, elle, n'a pas bougé.\""
+    outro: "L'approche globale de Financiale commence par un audit complet de votre situation — avant toute recommandation, avant toute solution. C'est ce qui nous distingue d'une approche produit."
+    image: /images/MADWRFj4iELzSD8neFhBLk5Q.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - { title: "Audit patrimonial 360°", text: "Synthèse complète de votre situation — actifs financiers, immobilier, patrimoine professionnel, statut matrimonial, prévoyance, fiscalité. Une cartographie exhaustive avant toute recommandation.", image: /images/0EeIMu5Ds3gU4ayp3fENsQl14.jpg }
+      - { title: "Détection des incohérences et opportunités", text: "Nos ingénieurs patrimoniaux identifient les fragilités, les angles morts et les leviers inexploités dans votre situation actuelle — souvent invisibles sans regard extérieur expert.", image: /images/gQHQCc9zHjRtEeiUytCN4mFlo.jpg }
+      - { title: "Stratégie patrimoniale sur-mesure", text: "Définition d'une ligne directrice cohérente avec vos projets de vie — retraite, transmission, constitution de patrimoine, projet entrepreneurial. Documentée dans une lettre de mission signée.", image: /images/mb0R6BljBYf23rvFI3iptN7VXg.jpg }
+      - { title: "Mise en œuvre coordonnée", text: "Au cœur de votre écosystème — experts-comptables, notaires, avocats — nous coordonnons la mise en place des solutions validées ensemble. Un seul interlocuteur, zéro friction.", image: /images/UWveDOqxJUaNT3HzoVPM7U36uI.jpg }
+      - { title: "Suivi continu & adaptation", text: "Rendez-vous réguliers, ajustements proactifs, veille fiscale et économique — votre stratégie évolue avec votre vie et l'environnement réglementaire.", image: /images/SYr5hDethwcL7mDKbfTw4t5AW00.jpg }
+
+  - type: focus
+    eyebrow: "L'audit patrimonial global"
+    title: "L'audit global : indispensable avant tout conseil."
+    image: /images/RljTKchz2Wgd8GQy6C1jhhOczg.jpg
+    paragraphs:
+      - "L'audit patrimonial est le point de départ de toute relation avec Financiale. Il ne s'agit pas d'un simple bilan financier — c'est une analyse à 360° de votre situation personnelle, professionnelle, juridique et fiscale."
+      - "Cet audit permet d'établir une vision d'ensemble objective, d'éviter la découverte tardive d'éléments essentiels et de détecter les incohérences ou les opportunités que des approches partielles laissent systématiquement de côté. Il est réalisé par nos ingénieurs patrimoniaux avant toute recommandation de produit ou de solution."
+      - "À l'issue de cet audit, nous vous présentons une synthèse structurée de votre situation et les problématiques que nous avons identifiées. C'est sur cette base — et uniquement sur cette base — que nous construisons votre stratégie patrimoniale."
+    boxTitle: "Bon à savoir"
+    box:
+      - "L'audit couvre toutes les dimensions de votre patrimoine — financier, immobilier, professionnel, juridique, fiscal"
+      - "Il est réalisé sans engagement de votre part et avant toute recommandation de produit"
+      - "Nos recommandations sont formalisées dans une lettre de mission signée mutuellement"
+      - "Les rendez-vous de suivi annuel permettent d'adapter la stratégie aux évolutions de votre vie"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "La rencontre", text: "Un premier rendez-vous pour vous connaître — vos objectifs, votre situation personnelle et professionnelle, vos projets de vie. C'est la base de tout conseil de qualité." }
+      - { label: "2ème étape", title: "L'étude", text: "Analyse approfondie par nos experts, synthèse patrimoniale globale, construction d'une stratégie personnalisée. Formalisée dans une lettre de mission signée mutuellement." }
+      - { label: "3ème étape", title: "L'action", text: "Mise en place des solutions validées ensemble, coordination avec votre écosystème de conseils — notaire, avocat, expert-comptable. Nous gérons l'ensemble." }
+      - { label: "4ème étape", title: "Le suivi", text: "Suivi continu de vos actifs, rendez-vous réguliers, adaptation aux évolutions de votre vie et de l'environnement fiscal. Vous êtes constamment informé." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Aide juridique & fiscale", text: "La stratégie patrimoniale s'appuie sur une ingénierie juridique et fiscale rigoureuse — nos experts coordonnent les deux.", image: /images/UqDUeIjBKDRV5fvFsFtdRkY76w.jpg, href: /aide-juridique-fiscale }
+      - { title: "Family Office", text: "Pour les dirigeants dont le patrimoine dépasse le cadre de l'entreprise et nécessite une coordination globale.", image: /images/yN1OYgVx5PUP9Dtg1IDatab1NuU.jpg, href: /family-office }
+      - { title: "Accompagnement du dirigeant", text: "Holding, cession, transmission d'entreprise — les enjeux juridiques et fiscaux spécifiques aux chefs d'entreprise.", image: /images/R1z8F1VOfbVRQu1HHWUpXcdAPi0.jpg, href: /accompagnement-dirigeant }
+
+  - type: cta
+    title: "Votre patrimoine mérite une vision d'ensemble."
+    text: "Un expert Financiale prend contact avec vous sous 48h pour un premier audit confidentiel de votre situation, sans engagement."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

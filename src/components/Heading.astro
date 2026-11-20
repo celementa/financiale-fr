@@ -1,0 +1,8 @@
+---
+/** Titre multi-lignes : « \n » dans le contenu = retour à la ligne. */
+import { lines } from '../lib/data';
+interface Props { text: string; as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'p'; class?: string }
+const { text, as: Tag = 'h2', class: cls } = Astro.props;
+const parts = lines(text);
+---
+<Tag class={cls}>{parts.map((l, i) => <Fragment>{l}{i < parts.length - 1 && <br />}</Fragment>)}</Tag>

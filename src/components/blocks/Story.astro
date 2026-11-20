@@ -1,0 +1,26 @@
+---
+/** « Notre histoire » : texte + lien + image portrait. */
+import Img from '../Img.astro';
+import LinkArrow from '../LinkArrow.astro';
+const { eyebrow, title, paragraphs = [], link, image } = Astro.props;
+---
+<section class="section section--paper story">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="story__grid">
+      <div class="reveal">
+        <h2 class="h3">{title}</h2>
+        <div class="story__body">{paragraphs.map((p: string) => <p>{p}</p>)}</div>
+        {link && <LinkArrow href={link.href} label={link.label} />}
+      </div>
+      <div class="media story__media reveal"><Img src={image} alt="" sizes="(max-width: 900px) 90vw, 560px" /></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .story__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; margin-top: 2rem; }
+  .story__body { margin: 2rem 0 2.5rem; max-width: 34rem; }
+  .story__media { aspect-ratio: 647 / 889; }
+  @media (max-width: 900px) { .story__grid { grid-template-columns: 1fr; } .story__media { max-width: 460px; } }
+</style>

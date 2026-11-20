@@ -1,0 +1,93 @@
+---
+import { site } from '../lib/data';
+import Img from './Img.astro';
+const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a href="/" class="site-header__logo" aria-label="Financiale — accueil">
+      <Img src={site.logo} alt="Financiale" eager />
+    </a>
+
+    <nav class="site-nav" aria-label="Navigation principale" id="site-nav">
+      <ul>
+        {site.nav.map((l: any) => (
+          <li><a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a></li>
+        ))}
+      </ul>
+      <a href={site.navCta.href} class="site-header__cta site-header__cta--mobile">{site.navCta.label}</a>
+    </nav>
+
+    <a href={site.navCta.href} class="site-header__cta">{site.navCta.label}</a>
+
+    <button class="site-header__toggle" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
+      <span class="sr-only">Menu</span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--paper);
+    border-bottom: 1px solid transparent;
+    transition: border-color .3s ease;
+  }
+  .site-header.is-scrolled { border-color: var(--line-dark); }
+  .site-header__inner {
+    height: var(--header-h);
+    display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+  }
+  .site-header__logo { width: 105px; flex: none; }
+  .site-header__logo :global(img) { width: 105px; height: auto; }
+  .site-nav ul { display: flex; gap: 2.25rem; list-style: none; margin: 0; padding: 0; }
+  .site-nav a { font-size: var(--fs-small); font-weight: 500; position: relative; }
+  .site-nav a[aria-current='page'] { text-decoration: underline; text-underline-offset: 4px; }
+  .site-nav a:hover { color: var(--bronze); }
+  .site-header__cta {
+    background: var(--navy); color: var(--paper);
+    font-size: var(--fs-small); font-weight: 500;
+    padding: .7rem 1.25rem;
+    transition: background .2s ease;
+  }
+  .site-header__cta:hover { background: var(--ink); }
+  .site-header__cta--mobile { display: none; }
+  .site-header__toggle { display: none; }
+
+  @media (max-width: 900px) {
+    .site-header__inner > .site-header__cta { display: none; }
+    .site-header__toggle {
+      display: grid; gap: 6px; place-content: center;
+      width: 44px; height: 44px; background: none; border: 0; cursor: pointer;
+    }
+    .site-header__toggle span:not(.sr-only) { display: block; width: 24px; height: 1.5px; background: var(--ink); transition: transform .25s; }
+    .site-header__toggle[aria-expanded='true'] span:nth-of-type(2) { transform: translateY(3.75px) rotate(45deg); }
+    .site-header__toggle[aria-expanded='true'] span:nth-of-type(3) { transform: translateY(-3.75px) rotate(-45deg); }
+    .site-nav {
+      position: fixed; inset: var(--header-h) 0 0 0;
+      background: var(--paper);
+      padding: 2rem var(--gutter);
+      display: none; flex-direction: column; gap: 2rem;
+    }
+    .site-nav.is-open { display: flex; }
+    .site-nav ul { flex-direction: column; gap: 1.25rem; }
+    .site-nav a { font-family: var(--font-display); font-size: 2rem; font-weight: 300; }
+    .site-header__cta--mobile { display: inline-block; align-self: flex-start; font-family: var(--font-body) !important; font-size: 1rem !important; }
+  }
+</style>
+
+<script>
+  const header = document.querySelector<HTMLElement>('[data-header]');
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const nav = document.getElementById('site-nav');
+  const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+  toggle?.addEventListener('click', () => {
+    const open = toggle.getAttribute('aria-expanded') !== 'true';
+    toggle.setAttribute('aria-expanded', String(open));
+    nav?.classList.toggle('is-open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+</script>

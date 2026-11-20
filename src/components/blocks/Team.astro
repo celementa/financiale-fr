@@ -1,0 +1,37 @@
+---
+/** Membres de l'équipe en portraits ronds. `members` = identifiants de src/data/team.yaml. */
+import Img from '../Img.astro';
+import Button from '../Button.astro';
+import { members as resolve } from '../../lib/data';
+const { eyebrow, title, members = [], roles = {}, link } = Astro.props;
+const list = resolve(members, roles);
+---
+<section class="section section--paper team">
+  <div class="container">
+    {eyebrow && <div class="divider"><p class="eyebrow">{eyebrow}</p></div>}
+    <h2 class="team__title">{title}</h2>
+    <ul class:list={['team__grid', list.length > 3 && 'team__grid--4']}>
+      {list.map((m) => (
+        <li class="reveal">
+          <div class="team__photo"><Img src={m.photo} alt={m.name} sizes="(max-width: 760px) 70vw, 400px" widths={[320, 480, 800]} /></div>
+          <h3 class="h5">{m.name}</h3>
+          <p class="team__role">{m.role}</p>
+          <p class="team__spec">{m.specialty}</p>
+        </li>
+      ))}
+    </ul>
+    {link && <Button href={link.href} label={link.label} class="team__link" />}
+  </div>
+</section>
+
+<style>
+  .team__title { max-width: 16em; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .team__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 1rem; }
+  .team__grid--4 { grid-template-columns: repeat(4, 1fr); }
+  .team__photo { aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #e7e5e2; margin-bottom: 1.25rem; }
+  .team__photo :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .team__role { font-size: .875rem; font-weight: 500; text-transform: uppercase; margin: .2rem 0 .9rem; }
+  .team__spec { font-size: var(--fs-small); }
+  .team :global(.team__link) { margin-top: 2.5rem; }
+  @media (max-width: 900px) { .team__grid, .team__grid--4 { grid-template-columns: 1fr 1fr; } }
+</style>

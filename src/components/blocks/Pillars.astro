@@ -1,0 +1,42 @@
+---
+/** « Une vision globale » : 3 cartes image (Patrimoine / Sport / Family Office). */
+import Img from '../Img.astro';
+import LinkArrow from '../LinkArrow.astro';
+const { eyebrow, title, link, logo, items = [] } = Astro.props;
+---
+<section class="section section--navy pillars">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="section-head section-head--split">
+      <h2>{title}</h2>
+      {link && <LinkArrow href={link.href} label={link.label} />}
+    </div>
+    <ul class="pillars__grid">
+      {items.map((it: any) => (
+        <li class="reveal">
+          <a href={it.href} class="card">
+            <div class="media media--card"><Img src={it.image} alt="" sizes="(max-width: 760px) 90vw, 400px" /></div>
+            {logo && <div class="card__logo"><Img src={logo} alt="" sizes="120px" widths={[120, 240]} /></div>}
+            <div class="card__body">
+              <h3 class="card__title">{it.title}</h3>
+              <p>{it.text}</p>
+            </div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .pillars__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .card { position: relative; display: block; color: var(--paper); overflow: hidden; }
+  .card .media :global(img) { transition: transform 1s ease; }
+  .card:hover .media :global(img) { transform: scale(1.04); }
+  .card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,.1) 30%, rgba(8,8,8,.75) 100%); pointer-events: none; }
+  .card__logo { position: absolute; top: 1.25rem; left: 1.25rem; width: 120px; z-index: 1; }
+  .card__body { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 1.5rem; z-index: 1; }
+  .card__title { font-size: var(--fs-h3); margin-bottom: .75rem; }
+  .card__body p { font-size: var(--fs-small); line-height: 1.45; max-width: 22rem; }
+  @media (max-width: 760px) { .pillars__grid { grid-template-columns: 1fr; } }
+</style>

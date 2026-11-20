@@ -1,0 +1,59 @@
+---
+/** Liste d'expertises en lignes (vignette, titre, texte, flèche).
+ *  tone: "dark" (fond bleu, défaut) | "light" */
+import Img from '../Img.astro';
+import Arrow from '../Arrow.astro';
+import Button from '../Button.astro';
+const { eyebrow, title, text, cta, items = [], tone = 'dark', asideImage } = Astro.props;
+---
+<section class:list={['section services', tone === 'dark' ? 'section--navy' : 'section--paper', `services--${tone}`]}>
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="services__head">
+      <div>
+        <h2>{title}</h2>
+        {text && <p class="services__intro">{text}</p>}
+        {cta && <Button href={cta.href} label={cta.label} variant="light" />}
+      </div>
+      {asideImage && <div class="media services__aside"><Img src={asideImage} alt="" sizes="260px" widths={[260, 520]} /></div>}
+    </div>
+    <ul class="services__list">
+      {items.map((it: any) => (
+        <li class="reveal">
+          <a href={it.href} class="row">
+            <div class="media row__thumb"><Img src={it.image} alt="" sizes="180px" widths={[180, 360]} /></div>
+            <div>
+              <h3 class="row__title">{it.title}</h3>
+              <p class="row__text">{it.text}</p>
+            </div>
+            <span class="row__arrow"><Arrow size={18} /></span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .services__head { display: flex; justify-content: space-between; gap: 3rem; align-items: flex-start; margin-bottom: clamp(3rem, 6vw, 5rem); }
+  .services__intro { max-width: 34rem; margin: 2rem 0 2.25rem; font-size: var(--fs-small); }
+  .services__aside { width: 254px; aspect-ratio: 254 / 350; flex: none; }
+  .services__list { list-style: none; margin: 0; padding: 0; }
+  .row {
+    display: grid; grid-template-columns: 180px 1fr auto; gap: 1.5rem 2rem; align-items: center;
+    padding: 2.25rem 0; border-bottom: 1px solid var(--line-light);
+  }
+  .services--light .row { border-color: var(--line-dark); color: var(--navy); }
+  .row__thumb { aspect-ratio: 180 / 102; }
+  .row__title { font-size: clamp(1.8rem, 1.2rem + 2vw, 3rem); margin-bottom: .6rem; }
+  .row__text { font-size: var(--fs-small); max-width: 46rem; opacity: .85; }
+  .row__arrow { transition: transform .25s ease; }
+  .row:hover .row__arrow { transform: translateX(6px); }
+  .row:hover .row__title { color: var(--gold); }
+  .services--light .row:hover .row__title { color: var(--bronze); }
+  @media (max-width: 760px) {
+    .services__aside { display: none; }
+    .row { grid-template-columns: 1fr auto; }
+    .row__thumb { grid-column: 1 / -1; width: 180px; }
+  }
+</style>

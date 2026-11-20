@@ -1,0 +1,63 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import Button from '../../components/Button.astro';
+import { formatDate } from '../../lib/format';
+import { site } from '../../lib/data';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('blog', (p) => !p.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post, others: posts.filter((p) => p.id !== post.id).slice(0, 3) },
+  }));
+}
+const { post, others } = Astro.props;
+const { Content } = await render(post);
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'Article',
+  headline: post.data.title, description: post.data.description,
+  datePublished: post.data.date.toISOString(), inLanguage: 'fr-FR',
+  publisher: { '@type': 'Organization', name: site.name, url: site.url },
+  mainEntityOfPage: new URL(`/blog/${post.id}`, site.url).href,
+}];
+---
+<Base title={`${post.data.title} | Financiale`} description={post.data.description} image={post.data.image} type="article" jsonLd={jsonLd}>
+  <article class="section section--paper post">
+    <div class="container">
+      <p class="eyebrow">Article · <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time></p>
+      <h1 class="h2 post__title">{post.data.title}</h1>
+      <div class="media media--wide post__cover"><Img src={post.data.image} alt={post.data.imageAlt} sizes="(max-width: 1300px) 95vw, 1240px" eager /></div>
+      <div class="prose post__body"><Content /></div>
+      <Button href="/contact" label="Parler à un expert" />
+    </div>
+  </article>
+
+  {others.length > 0 && (
+    <section class="section section--white">
+      <div class="container">
+        <h2 class="h4">Nos autres articles</h2>
+        <ul class="others">
+          {others.map((p) => (
+            <li><a href={`/blog/${p.id}`}>
+              <div class="media media--wide"><Img src={p.data.image} alt={p.data.imageAlt} sizes="(max-width: 760px) 90vw, 400px" /></div>
+              <time datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+              <h3 class="h5">{p.data.title}</h3>
+            </a></li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  )}
+</Base>
+<style>
+  .post__title { max-width: 20em; margin-bottom: clamp(2rem, 4vw, 3rem); }
+  .post__cover { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .post__body { margin: 0 auto 3rem; }
+  .post .btn { margin-left: max(0px, calc((100% - 44rem) / 2)); }
+  .others { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+  .others a { display: grid; gap: .75rem; }
+  .others time { font-size: var(--fs-small); color: rgba(35,31,32,.5); }
+  @media (max-width: 760px) { .others { grid-template-columns: 1fr; } }
+</style>

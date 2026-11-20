@@ -1,0 +1,62 @@
+---
+/** Bandeau d'ouverture plein écran avec image de fond.
+ *  variant: "default" | "home" | "banner" */
+import Img from '../Img.astro';
+import Heading from '../Heading.astro';
+import Button from '../Button.astro';
+import LinkArrow from '../LinkArrow.astro';
+const { image, eyebrow, title, text, cta, secondary, variant = 'default' } = Astro.props;
+---
+<section class:list={['hero', `hero--${variant}`]}>
+  <div class="hero__bg"><Img src={image} alt="" eager quality={70} /></div>
+  <div class="container hero__inner">
+    {variant === 'home' ? (
+      <>
+        <div class="hero__intro">
+          <p class="lead">{text}</p>
+          <div class="hero__actions">
+            {cta && <Button href={cta.href} label={cta.label} />}
+            {secondary && <LinkArrow href={secondary.href} label={secondary.label} />}
+          </div>
+        </div>
+        <Heading as="h1" text={title} class="hero__title" />
+      </>
+    ) : (
+      <div class="hero__content">
+        {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+        <Heading as="h1" text={title} class="hero__title" />
+        {text && <p class="lead hero__text">{text}</p>}
+        {cta && <div class="hero__actions"><Button href={cta.href} label={cta.label} /></div>}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative; isolation: isolate; overflow: hidden;
+    background: var(--ink); color: var(--paper);
+    min-height: min(100svh - var(--header-h), 940px);
+    display: flex;
+  }
+  .hero__bg { position: absolute; inset: 0; z-index: -1; }
+  .hero__bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .hero::after {
+    content: ''; position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(180deg, rgba(8,8,8,.25) 0%, rgba(8,8,8,.35) 45%, rgba(8,8,8,.7) 100%);
+  }
+  .hero__inner { display: flex; flex-direction: column; justify-content: flex-end; padding-block: clamp(3rem, 8vw, 6rem); }
+  .hero__content { max-width: 52rem; }
+  .hero__text { max-width: 36rem; margin-top: 1.75rem; }
+  .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem 3rem; margin-top: 2.25rem; }
+
+  /* Accueil : accroche au milieu, grand titre en bas */
+  .hero--home .hero__inner { justify-content: space-between; padding-top: clamp(6rem, 22vh, 14rem); }
+  .hero--home .hero__intro { max-width: 34rem; }
+  .hero--home .hero__actions { margin-top: 1.75rem; }
+  .hero--home .hero__title { margin-top: 4rem; max-width: 14em; }
+
+  /* Bandeau court (page Financiale) */
+  .hero--banner { min-height: clamp(420px, 60vh, 620px); }
+  .hero--banner :global(h1) { font-size: var(--fs-h2); }
+</style>

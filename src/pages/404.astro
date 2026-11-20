@@ -1,0 +1,17 @@
+---
+import Base from '../layouts/Base.astro';
+import Button from '../components/Button.astro';
+---
+<Base title="Page introuvable — Financiale" description="Cette page n'existe pas ou a été déplacée." noindex>
+  <section class="section section--paper nf">
+    <div class="container">
+      <h1 class="h2">404</h1>
+      <p class="lead">Désolé, vous avez l'air perdu...</p>
+      <Button href="/" label="Retour à l'accueil" />
+    </div>
+  </section>
+</Base>
+<style>
+  .nf { min-height: 60vh; display: flex; align-items: center; text-align: center; }
+  .nf .container { display: grid; justify-items: center; gap: 1.5rem; }
+</style>

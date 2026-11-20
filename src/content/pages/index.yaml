@@ -1,0 +1,98 @@
+slug: ""
+seo:
+  title: "Financiale — Cabinet de gestion de patrimoine indépendant à Paris"
+  description: "Financiale est l’union de plusieurs expertises au service des patrimoines les plus exigeants : dirigeants, expatriés, familles, sportifs de haut niveau."
+  image: /images/gosStDyb5LM9rgOPrmjzkkPUuE.jpg
+blocks:
+  - type: hero
+    variant: home
+    image: /images/gosStDyb5LM9rgOPrmjzkkPUuE.jpg
+    title: "L’expertise patrimoniale au\nservice de votre patrimoine."
+    text: "Financiale est l’union de plusieurs expertises au service des patrimoines les plus exigeants : dirigeants, expatriés, familles, sportifs de haut niveau."
+    cta: { label: "Demander un diagnostic", href: /contact }
+    secondary: { label: "Nos expertises", href: /nos-expertises }
+
+  - type: about
+    eyebrow: "Qui sommes-nous"
+    title: "Financiale.\nUn groupe, une ambition : protéger et faire fructifier ce que vous avez construit"
+    text: "Notre groupe est né d’une conviction simple : la gestion de patrimoine des dirigeants, des familles fortunées, des expatriés, des sportifs de haut niveau mérite mieux que des solutions standardisées. Nous avons construit un écosystème unique en France, combinant l'expertise patrimoniale la plus pointue, une infrastructure digitale de premier plan et un accompagnement family office digne des plus grandes banques privées mondiales. Indépendants par choix. Transparents par principe. Engagés sur le long terme."
+    link: { label: "En savoir plus", href: /financiale }
+    image: /images/t3RTOfTXGNzCJA7jFYHLUVOc.jpg
+    stats:
+      - { value: "450M€", label: "D'encours gérés" }
+      - { value: "20+", label: "Années d'expérience" }
+      - { value: "1000+", label: "Clients accompagnés" }
+      - { value: "5+", label: "Expertises réunies" }
+
+  - type: pillars
+    eyebrow: "Notre groupe"
+    title: "Une vision globale"
+    link: { label: "Découvrir", href: /financiale }
+    logo: /images/yQzyQAPElR1Jrq9WO9c8kpGSM.png
+    items:
+      - title: "Patrimoine"
+        text: "Conseil en investissement, optimisation fiscale, immobilier patrimonial, retraite, transmission. Une approche pluridisciplinaire pour chaque situation"
+        image: /images/m7qgHvRe74ozAVq0FE7mkjnghI.jpg
+        href: /nos-expertises
+      - title: "Sport"
+        text: "Carrières courtes, revenus élevés et irréguliers, exposition médiatique, les sportifs de haut niveau ont des enjeux patrimoniaux uniques. Nous structurons, protégeons et anticipons."
+        image: /images/S5jPZdSW7EKjju3inIkIWtQQ.png
+        href: /sport
+      - title: "Family Office"
+        text: "Coordination globale de vos actifs, reporting institutionnel, gouvernance familiale, relation avec vos conseils juridiques et fiscaux."
+        image: /images/yN1OYgVx5PUP9Dtg1IDatab1NuU.jpg
+        href: /family-office
+
+  - type: services
+    eyebrow: "Nos services"
+    title: "A chaque patrimoine une solution"
+    text: "Chaque situation patrimoniale est unique. Qu'il s'agisse de structurer la cession de votre entreprise, d'optimiser votre fiscalité ou d'organiser la transmission de ce que vous avez bâti, nos équipes pluridisciplinaires apportent une réponse sur mesure à la fois fiscale (tout en tenant compte du cadre juridique), financière et humaine, adaptée à la réalité de votre vie et de vos ambitions."
+    cta: { label: "Tous nos services", href: /nos-expertises }
+    items:
+      - title: "Accompagnement du dirigeant d'entreprise"
+        text: "Rémunération, holding, cession, transmission — les enjeux patrimoniaux d'un dirigeant sont indissociables de son entreprise. Nous construisons une stratégie qui couvre les deux."
+        image: /images/fEezyjgsNZp0tpLc5LsV67mDrzc.jpg
+        href: /accompagnement-dirigeant
+      - title: "Aide juridique et fiscale"
+        text: "Optimisation fiscale, structuration juridique, ingénierie patrimoniale — nos experts coordonnent les dimensions légales et fiscales de votre patrimoine pour chaque décision significative."
+        image: /images/zvgVs1u7HU5QjtbOBagQmyo3JM.jpg
+        href: /aide-juridique-fiscale
+      - title: "Courtage d'assurance"
+        text: "Prévoyance, protection des proches, assurance-vie — nous sélectionnons les meilleures solutions du marché sans contrainte de distribution, en toute indépendance et transparence."
+        image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg
+        href: /courtage-assurance
+
+  - type: sportTeaser
+    eyebrow: "Financiale Sport"
+    title: "Une carrière d'exception mérite une stratégie patrimoniale à sa hauteur."
+    text: "Financiale accompagne les sportifs de haut niveau, leurs agents et leurs clubs sur l'ensemble de leurs enjeux patrimoniaux — fiscalité, droit à l'image, prévoyance, reconversion. Parce qu'une carrière courte exige des décisions justes, prises au bon moment."
+    points:
+      - title: "Carrière courte, patrimoine long"
+        text: "Revenus élevés, durée limitée, mobilité internationale — nous structurons votre patrimoine dès le premier contrat pour que l'après-carrière soit une opportunité, pas une contrainte."
+      - title: "Droit à l'image & fiscalité"
+        text: "Salaire, primes, contrats publicitaires, droits à l'image — chaque source de revenu a ses règles. Nos experts optimisent votre fiscalité en tenant compte de toutes les spécificités du monde sportif."
+      - title: "Un écosystème complet"
+        text: "Nous travaillons avec le sportif, son agent et son club. Une coordination totale pour que rien ne soit laissé entre deux chaises."
+    cta: { label: "Demander un diagnostic", href: /contact }
+    slides:
+      - { image: /images/6o5Mhf3jxFrE8Whg7ROlLPdmlWM.png, alt: "Photo en noir et blanc de personnes marchant vers un immeuble" }
+      - { image: /images/7f6xHHoOdufnJ66DWk2HffneVc.jpg, alt: "Un homme tenant un portefeuille et une montre" }
+      - { image: /images/KOrSzz7brRD82Urd8gji7hHwVV0.jpg, alt: "Homme debout près d'une route à côté d'un immeuble" }
+      - { image: /images/fkfBTUqfM8Z6q6U4W8mv4qum3TQ.jpg, alt: "Personne tenant une carte bancaire et un appareil blanc" }
+
+  - type: process
+    tone: light
+    eyebrow: "Processus"
+    title: "Un accompagnement structuré, de la première conversation à la gestion long terme."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    steps:
+      - { label: "1ère étape", title: "Diagnostic patrimonial", text: "Un entretien confidentiel pour comprendre votre situation, vos objectifs et vos contraintes." }
+      - { label: "2ème étape", title: "Analyse & recommandations", text: "Une stratégie personnalisée, documentée et argumentée." }
+      - { label: "3ème étape", title: "Mise en œuvre", text: "Sélection et coordination des meilleures solutions en intégrant les aspects juridiques et fiscaux." }
+      - { label: "4ème étape", title: "Suivi continu", text: "Reporting régulier, ajustements proactifs, accompagnement dans la durée." }
+
+  - type: cta
+    title: "Votre patrimoine mérite toute notre attention"
+    text: "Le diagnostic est gratuit, confidentiel et sans engagement. Un conseiller senior vous rappelle sous 48h."
+    image: /images/QdRL6kHXc42e9QgQMdUc0Ss30w.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

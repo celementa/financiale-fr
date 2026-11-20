@@ -1,0 +1,47 @@
+---
+/** Méthode en étapes : image à gauche, étapes à droite.
+ *  tone: "dark" (fond bleu) | "light" */
+import Img from '../Img.astro';
+import Button from '../Button.astro';
+const { eyebrow, title, image, steps = [], cta, tone = 'dark' } = Astro.props;
+---
+<section class:list={['section process', tone === 'dark' ? 'section--navy' : 'section--paper', `process--${tone}`]}>
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <h2 class="process__title">{title}</h2>
+    <div class="process__grid">
+      <div class="process__aside">
+        <div class="media process__media"><Img src={image} alt="" sizes="(max-width: 900px) 90vw, 560px" /></div>
+        {cta && <Button href={cta.href} label={cta.label} variant="light" class="process__cta" />}
+      </div>
+      <ol class="process__steps">
+        {steps.map((s: any) => (
+          <li class="reveal">
+            <p class="h5 process__label">{s.label}</p>
+            <h3 class="h4">{s.title}</h3>
+            <p class="process__text">{s.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>
+
+<style>
+  .process__title { max-width: 18em; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .process__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 4vw, 3rem); align-items: start; }
+  .process__aside { position: sticky; top: calc(var(--header-h) + 2rem); }
+  .process__media { aspect-ratio: 647 / 886; }
+  .process :global(.process__cta) { margin-top: 1.5rem; }
+  .process__steps { list-style: none; margin: 0; padding: 0; }
+  .process__steps li { padding: 1rem 0 2rem; border-bottom: 1px solid var(--line-dark); }
+  .process--dark .process__steps li { border-color: var(--line-light); color: var(--cream); }
+  .process__steps li:last-child { border-bottom: 0; }
+  .process__label { margin-bottom: .4rem; }
+  .process--dark .process__label { color: var(--gold); }
+  .process__text { font-size: var(--fs-small); margin-top: 1rem; max-width: 30rem; }
+  @media (max-width: 900px) {
+    .process__grid { grid-template-columns: 1fr; }
+    .process__aside { position: static; max-width: 460px; }
+  }
+</style>

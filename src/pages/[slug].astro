@@ -1,0 +1,15 @@
+---
+/** Toutes les pages à blocs sauf l'accueil : une URL par fichier src/content/pages/<slug>.yaml */
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Blocks from '../components/Blocks.astro';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages', (p) => p.data.slug !== '');
+  return pages.map((page) => ({ params: { slug: page.data.slug }, props: { page } }));
+}
+const { page } = Astro.props;
+---
+<Base title={page.data.seo.title} description={page.data.seo.description} image={page.data.seo.image}>
+  <Blocks blocks={page.data.blocks} />
+</Base>

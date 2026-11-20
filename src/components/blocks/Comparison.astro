@@ -1,0 +1,39 @@
+---
+/** Tableau comparatif (critères en lignes, offres en colonnes). */
+const { eyebrow, title, criteria = [], columns = [] } = Astro.props;
+---
+<section class="section section--paper compare">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <h2 class="compare__title">{title}</h2>
+    <div class="compare__wrap reveal">
+      <table>
+        <thead>
+          <tr>
+            <td></td>
+            {columns.map((c: any) => <th scope="col" class:list={['h5', c.highlight && 'is-hl']}>{c.title}</th>)}
+          </tr>
+        </thead>
+        <tbody>
+          {criteria.map((crit: string, i: number) => (
+            <tr>
+              <th scope="row">{crit}</th>
+              {columns.map((c: any) => <td class:list={[c.highlight && 'is-hl']}>{c.values[i]}</td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<style>
+  .compare__title { margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .compare__wrap { overflow-x: auto; }
+  table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: var(--fs-lead); }
+  th, td { text-align: left; padding: 1.1rem 1.25rem; border-bottom: 1px solid var(--line-dark); font-weight: 400; vertical-align: top; }
+  thead th { font-family: var(--font-display); font-weight: 300; }
+  tbody th { width: 26%; }
+  .is-hl { background: var(--white); }
+  thead .is-hl { background: var(--navy); color: var(--white); }
+</style>

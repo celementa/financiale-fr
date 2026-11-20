@@ -1,0 +1,30 @@
+---
+/** Grande image avec titre et chiffres clés en surimpression. */
+import Img from '../Img.astro';
+const { image, title, items = [] } = Astro.props;
+---
+<section class="stats-banner">
+  <div class="stats-banner__bg"><Img src={image} alt="" /></div>
+  <div class="container stats-banner__inner">
+    <h2 class="h1 reveal">{title}</h2>
+    <ul>
+      {items.map((s: any) => (
+        <li class="reveal"><span class="stats-banner__value">{s.value}</span><span class="stats-banner__label">{s.label}</span></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .stats-banner { position: relative; isolation: isolate; color: var(--paper); background: var(--navy); }
+  .stats-banner__bg { position: absolute; inset: 0; z-index: -1; }
+  .stats-banner__bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .stats-banner::after { content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(8, 8, 8, .45); }
+  .stats-banner__inner { padding-block: var(--section-y); min-height: clamp(560px, 55vw, 760px); display: flex; flex-direction: column; justify-content: space-between; gap: 4rem; }
+  .stats-banner h2 { max-width: 13em; }
+  .stats-banner ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stats-banner li { display: flex; flex-direction: column-reverse; gap: 1.5rem; padding-left: 1rem; border-left: 1px solid var(--line-light); }
+  .stats-banner__value { font-family: var(--font-display); font-weight: 300; font-size: var(--fs-h2); line-height: 1; }
+  .stats-banner__label { font-size: var(--fs-small); font-weight: 500; text-transform: uppercase; }
+  @media (max-width: 760px) { .stats-banner ul { grid-template-columns: 1fr 1fr; gap: 2rem 0; } }
+</style>

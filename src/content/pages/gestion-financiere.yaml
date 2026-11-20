@@ -1,0 +1,87 @@
+slug: gestion-financiere
+seo:
+  title: "Gestion financière indépendante — Financiale"
+  description: "De la gestion déléguée au private equity sur-mesure, Financiale construit et pilote votre allocation financière selon votre profil et vos objectifs."
+  image: /images/HCiJkq8mG0xwMV65hcaxUrSwAY.jpg
+blocks:
+  - type: hero
+    image: /images/HCiJkq8mG0xwMV65hcaxUrSwAY.jpg
+    title: "Vos actifs financiers pilotés avec rigueur et indépendance."
+    text: "De la gestion déléguée au private equity sur-mesure — Financiale construit et pilote votre allocation financière en fonction de votre profil, vos objectifs et votre appétence au risque."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "Gérer ses actifs financiers seul, c'est souvent les subir."
+    paragraphs:
+      - "Les marchés financiers sont complexes, volatils et chronophages. Sans expertise dédiée et sans vision d'ensemble de votre patrimoine global, les décisions d'allocation sont prises dans l'urgence ou par défaut — rarement dans votre intérêt optimal. Financiale construit avec vous une stratégie financière cohérente, adaptée à votre profil et pilotée dans la durée."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"J'ai des actifs financiers dispersés sur plusieurs enveloppes — je n'ai pas de vision consolidée ni de stratégie d'allocation claire.\""
+      - "\"Je confie ma gestion à ma banque mais je ne suis pas sûr que mes intérêts soient vraiment au centre de leurs recommandations.\""
+      - "\"Je veux accéder au private equity ou à des produits structurés mais je ne sais pas par où commencer.\""
+    outro: "Financiale analyse votre situation, détermine votre profil de risque et construit une allocation de référence issue des convictions de nos experts internes et externes — en toute indépendance, sans contrainte de distribution."
+    image: /images/zhReAOP0t7XC8naZeQ1MANjdf4M.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - { title: "Gestion déléguée", text: "Vous nous confiez la gestion de votre portefeuille. En fonction de votre profil de risque validé ensemble — sécuritaire, prudent, équilibré, dynamique ou offensif — nous arbitrons votre portefeuille avec réactivité et conviction.", image: /images/iHMkIob4JXU1dJoURUZ82nF9ZmI.jpg }
+      - { title: "Gestion conseillée", text: "Vous restez décisionnaire. Nous vous fournissons des recommandations personnalisées, des alertes techniques et un suivi proactif — pour les investisseurs qui souhaitent s'impliquer dans la gestion de leurs actifs.", image: /images/nIIlunkTroNpc8q25AyKk2Rs9Jk.jpg }
+      - { title: "Produits sur-mesure", text: "Pour les clients recherchant des solutions innovantes et personnalisées — produits structurés, fonds dédiés, stratégies d'allocation combinant solidité et rendement sur le long terme.", image: /images/u8gr4a2VuR69uM4mCvAqox2IRg8.jpg }
+      - { title: "Private equity", text: "Accès aux entreprises non cotées via des fonds collectifs ou en investissement direct. Diversification, rendement long terme supérieur aux marchés cotés, optimisation via l'article 150-0 B ter pour les cessions d'entreprise.", image: /images/bMHaAi6CAjqqaEHcu78LszMURSQ.jpg }
+      - { title: "Reporting & suivi de marché", text: "Point régulier sur les marchés financiers, communication exceptionnelle en cas de mouvement significatif — vous êtes informé et accompagné à chaque étape de la vie de votre portefeuille.", image: /images/JDULo0QuVrvElK57d45cjrMdsoo.jpg }
+
+  - type: focus
+    eyebrow: "Le private equity"
+    title: "Private equity : accéder aux entreprises non cotées pour diversifier et performer."
+    image: /images/ob3ENwTc9NLQstjHumWaY3IgBg.jpg
+    paragraphs:
+      - "Le private equity — investissement dans des entreprises non cotées en bourse — est historiquement réservé aux investisseurs institutionnels et aux grandes fortunes. Face à la demande croissante de nos clients, Financiale a développé un département dédié pour démocratiser l'accès à cette classe d'actifs."
+      - "Sur le long terme, le private equity offre des rendements structurellement supérieurs aux marchés cotés — au prix d'une liquidité réduite et d'un horizon d'investissement plus long (5 à 10 ans en général). Il se présente sous deux formes : l'investissement collectif via des fonds (FCPR, FPCI) ou l'investissement en direct dans des entreprises sélectionnées."
+      - "Pour les dirigeants en cession d'entreprise, le private equity via l'article 150-0 B ter permet de réinvestir le produit de cession dans des entreprises éligibles et de bénéficier d'un report d'imposition sur la plus-value — un levier fiscal puissant souvent sous-utilisé."
+    boxTitle: "Bon à savoir"
+    box:
+      - "Rendement long terme généralement supérieur aux marchés cotés"
+      - "Accessible via des fonds collectifs (FCPR, FPCI) ou en investissement direct"
+      - "Éligible au sein de certaines enveloppes assurance-vie pour une fiscalité optimisée"
+      - "Article 150-0 B ter : report d'imposition sur plus-value de cession via réinvestissement en PE"
+      - "Horizon d'investissement recommandé : 5 à 10 ans minimum"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Définition du profil de risque", text: "Analyse de votre situation financière, de votre connaissance des marchés, de vos objectifs et de votre horizon d'investissement. Votre profil de risque est formalisé et actualisé à chaque événement de vie significatif." }
+      - { label: "2ème étape", title: "Construction de l'allocation", text: "Définition d'une allocation de référence issue des convictions de nos experts internes et d'un réseau de partenaires externes approuvés — actions, obligations, immobilier coté, private equity, produits structurés. Chaque décision est argumentée." }
+      - { label: "3ème étape", title: "Pilotage & reporting continu", text: "Arbitrages proactifs en gestion déléguée, recommandations régulières en gestion conseillée, reporting de performance et points de marché réguliers. Vous êtes informé en permanence." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Courtage d'assurance", text: "Garanties locatives, assurance emprunteur, prévoyance — protéger vos investissements immobiliers à chaque étape.", image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg, href: /courtage-assurance }
+      - { title: "Investissements immobiliers", text: "Structuration, financement, optimisation fiscale — construire et développer un patrimoine immobilier performant.", image: /images/Fj7eU5lyfeLews9ZPDGlWVtKHk.jpg, href: /investissements-immobiliers }
+      - { title: "Accompagnement du dirigeant", text: "Holding, cession, transmission d'entreprise — les enjeux juridiques et fiscaux spécifiques aux chefs d'entreprise.", image: /images/R1z8F1VOfbVRQu1HHWUpXcdAPi0.jpg, href: /accompagnement-dirigeant }
+
+  - type: cta
+    title: "Vos actifs financiers méritent mieux qu'une gestion par défaut."
+    text: "Un expert financier Financiale prend contact avec vous sous 48h pour analyser votre allocation actuelle et vos objectifs, en toute confidentialité."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

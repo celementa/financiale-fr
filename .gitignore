@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.env
+form-handler/.env
+form-handler/node_modules/
+.DS_Store
+*.log

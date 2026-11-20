@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { Content, frontmatter } from '../data/mentions-legales.md';
+---
+<Base title="Mentions légales — Financiale" description="Mentions légales, traitement des réclamations et protection des données personnelles de Financiale Gestion Privée.">
+  <section class="section section--paper">
+    <div class="container">
+      <h1 class="h2">Mentions légales</h1>
+      <p class="eyebrow legal__date">Mise à jour le {frontmatter.updated}</p>
+      <div class="prose legal"><Content /></div>
+    </div>
+  </section>
+</Base>
+<style>
+  .legal__date { color: rgba(8,8,8,.6); margin-top: 1.5rem; }
+  .legal { max-width: 52rem; font-size: 1rem; }
+  .legal :global(h2) { font-size: var(--fs-h4); margin-top: 3rem; }
+</style>

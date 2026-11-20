@@ -1,0 +1,88 @@
+---
+/** Teaser « Financiale Sport » : texte à gauche, diaporama d'images à droite. */
+import Img from '../Img.astro';
+import Button from '../Button.astro';
+import Arrow from '../Arrow.astro';
+const { eyebrow, title, text, points = [], cta, slides = [] } = Astro.props;
+---
+<section class="section--navy teaser" data-slider>
+  <div class="teaser__text">
+    <p class="eyebrow">{eyebrow}</p>
+    <h2 class="h4">{title}</h2>
+    <p class="teaser__intro">{text}</p>
+    <ul class="teaser__points">
+      {points.map((p: any) => (
+        <li>
+          <span class="teaser__icon" aria-hidden="true"></span>
+          <div><p class="teaser__point-title">{p.title}</p><p class="muted">{p.text}</p></div>
+        </li>
+      ))}
+    </ul>
+    {cta && <Button href={cta.href} label={cta.label} variant="light" />}
+  </div>
+  <div class="teaser__slides">
+    {slides.map((s: any, i: number) => (
+      <div class:list={['teaser__slide', i === 0 && 'is-active']} data-slide>
+        <Img src={s.image} alt={s.alt ?? ''} sizes="(max-width: 900px) 100vw, 50vw" />
+      </div>
+    ))}
+    {slides.length > 1 && (
+      <div class="teaser__controls">
+        <button type="button" data-prev aria-label="Image précédente"><Arrow dir="left" /></button>
+        <button type="button" data-next aria-label="Image suivante"><Arrow /></button>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .teaser { display: grid; grid-template-columns: 1fr 1fr; min-height: 780px; }
+  .teaser__text {
+    padding: var(--section-y) clamp(2rem, 6vw, 6rem) var(--section-y) max(var(--gutter), calc((100vw - var(--container)) / 2));
+    display: flex; flex-direction: column; align-items: flex-start;
+  }
+  .teaser__text h2 { margin-top: clamp(2rem, 6vw, 5rem); max-width: 22ch; }
+  .teaser__intro { font-size: var(--fs-small); max-width: 30rem; margin: 1.75rem 0 3rem 1.5rem; }
+  .teaser__points { list-style: none; padding: 0; margin: auto 0 2.5rem; display: grid; gap: 1.25rem; }
+  .teaser__points li { display: grid; grid-template-columns: 18px 1fr; gap: .75rem; }
+  .teaser__icon { width: 14px; height: 14px; margin-top: .3rem; background: var(--bronze); border: 3px solid rgba(196,168,130,.4); }
+  .teaser__point-title { margin-bottom: .25rem; }
+  .teaser__points .muted { font-size: .875rem; line-height: 1.5; max-width: 30rem; }
+
+  .teaser__slides { position: relative; overflow: hidden; background: var(--ink); min-height: 420px; }
+  .teaser__slide { position: absolute; inset: 0; opacity: 0; transition: opacity .9s ease; }
+  .teaser__slide.is-active { opacity: 1; }
+  .teaser__slide :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .teaser__controls { position: absolute; right: 1.25rem; bottom: 1.25rem; display: flex; gap: .5rem; }
+  .teaser__controls button {
+    width: 2.5rem; height: 2.5rem; display: grid; place-items: center; cursor: pointer;
+    background: rgba(27,45,69,.85); color: var(--paper); border: 1px solid var(--line-light);
+  }
+  .teaser__controls button:hover { background: var(--bronze); }
+  @media (max-width: 900px) {
+    .teaser { grid-template-columns: 1fr; }
+    .teaser__text { padding-inline: var(--gutter); }
+    .teaser__intro { margin-left: 0; }
+    .teaser__slides { aspect-ratio: 4 / 3; }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-slider]').forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-slide]')];
+    if (slides.length < 2) return;
+    let i = 0;
+    let timer: number | undefined;
+    const show = (n: number) => {
+      slides[i].classList.remove('is-active');
+      i = (n + slides.length) % slides.length;
+      slides[i].classList.add('is-active');
+    };
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const start = () => { if (!reduce) timer = window.setInterval(() => show(i + 1), 5000); };
+    const restart = () => { window.clearInterval(timer); start(); };
+    root.querySelector('[data-prev]')?.addEventListener('click', () => { show(i - 1); restart(); });
+    root.querySelector('[data-next]')?.addEventListener('click', () => { show(i + 1); restart(); });
+    start();
+  });
+</script>

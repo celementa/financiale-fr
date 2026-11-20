@@ -1,0 +1,49 @@
+---
+/** Équipe élargie en défilement horizontal. */
+import Img from '../Img.astro';
+import Arrow from '../Arrow.astro';
+import { members as resolve } from '../../lib/data';
+const { title, members = [], roles = {} } = Astro.props;
+const list = resolve(members, roles);
+---
+<section class="section section--paper team-c" data-carousel>
+  <div class="container section-head section-head--split">
+    <h2>{title}</h2>
+    <div class="team-c__nav">
+      <button type="button" data-prev aria-label="Précédent"><Arrow dir="left" size={14} /></button>
+      <button type="button" data-next aria-label="Suivant"><Arrow size={14} /></button>
+    </div>
+  </div>
+  <ul class="team-c__track" data-track>
+    {list.map((m) => (
+      <li>
+        <div class="team-c__photo"><Img src={m.photo} alt={m.name} sizes="260px" widths={[260, 520]} /></div>
+        <h3 class="h5">{m.name}</h3>
+        <p class="team-c__role">{m.role}</p>
+        <p class="team-c__spec">{m.specialty}</p>
+      </li>
+    ))}
+  </ul>
+</section>
+
+<style>
+  .team-c { padding-top: 0; }
+  .team-c__nav { display: flex; gap: .5rem; }
+  .team-c__nav button { width: 2.25rem; height: 2.25rem; display: grid; place-items: center; cursor: pointer; background: var(--navy); color: var(--paper); border: 0; }
+  .team-c__track {
+    list-style: none; margin: 0; padding: 0 max(var(--gutter), calc((100vw - var(--container)) / 2));
+    display: grid; grid-auto-flow: column; grid-auto-columns: clamp(200px, 22vw, 260px); gap: 1.5rem;
+    overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    scroll-padding-inline: max(var(--gutter), calc((100vw - var(--container)) / 2));
+  }
+  .team-c__track::-webkit-scrollbar { display: none; }
+  .team-c__track li { scroll-snap-align: start; }
+  .team-c__photo { aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #e7e5e2; margin-bottom: 1rem; }
+  .team-c__photo :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .team-c__role { font-size: .8125rem; font-weight: 500; text-transform: uppercase; margin: .2rem 0 .6rem; }
+  .team-c__spec { font-size: .875rem; }
+</style>
+
+<script>
+  import '../../scripts/carousel';
+</script>

@@ -1,0 +1,35 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Img from '../../components/Img.astro';
+import { formatDate } from '../../lib/format';
+const posts = (await getCollection('blog', (p) => !p.data.draft)).sort((a, b) => +b.data.date - +a.data.date);
+---
+<Base title="Blog — Décryptages & perspectives patrimoniales | Financiale" description="Fiscalité, transmission, expatriation, cession d'entreprise : les analyses des experts Financiale.">
+  <section class="section section--paper">
+    <div class="container">
+      <p class="eyebrow">Notre blog</p>
+      <h1>Décryptages & Perspectives patrimoniales</h1>
+      <ul class="posts">
+        {posts.map((p) => (
+          <li class="reveal">
+            <a href={`/blog/${p.id}`}>
+              <div class="media media--wide"><Img src={p.data.image} alt={p.data.imageAlt} sizes="(max-width: 760px) 90vw, 400px" /></div>
+              <time datetime={p.data.date.toISOString()}>{formatDate(p.data.date)}</time>
+              <h2 class="h5">{p.data.title}</h2>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+</Base>
+<style>
+  .posts { list-style: none; margin: clamp(3rem, 6vw, 5rem) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem 1.25rem; }
+  .posts a { display: grid; gap: .9rem; }
+  .posts time { font-size: var(--fs-small); color: rgba(35,31,32,.5); }
+  .posts h2 { font-size: 1.5rem; }
+  .posts a:hover h2 { color: var(--bronze); }
+  @media (max-width: 900px) { .posts { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .posts { grid-template-columns: 1fr; } }
+</style>

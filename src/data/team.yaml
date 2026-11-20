@@ -1,0 +1,83 @@
+# Équipe Financiale — une seule source pour toutes les pages.
+# Les pages référencent les membres par leur identifiant (clé).
+# `role` est le titre par défaut ; une page peut le remplacer via `roles:`.
+vincent-mallet:
+  name: "Vincent Mallet"
+  role: "Président"
+  specialty: "Spécialisé en marchés financiers, droit civil et sportif"
+  photo: /images/kAV4Jn3vs2aBQdg3sUA0g7hV1g.png
+carole-mallet:
+  name: "Carole Mallet"
+  role: "Directrice générale"
+  specialty: "Spécialisée en droit fiscal"
+  photo: /images/rzjLa2ByEUCp5jQlgvANYqK4IA.jpg
+christine-leroy:
+  name: "Christine Leroy"
+  role: "Directrice générale"
+  specialty: "Spécialisée en contrôle de gestion"
+  photo: /images/Q57nIuhbsfogEZk4o1gctBhN8.jpg
+anne-emmanuelle-bannier:
+  name: "Anne-Emmanuelle Bannier"
+  role: "Associée"
+  specialty: "Spécialisée en allocation d'actifs, stratégie patrimoniale"
+  photo: /images/DBFKh7Ua6dreNygceIbltdvlvQ.jpg
+gentian-cani:
+  name: "Gentian Cani"
+  role: "Senior advisor"
+  specialty: "Spécialisé en accompagnement international des sportifs"
+  photo: /images/xBI9xWSh04yF9aqXYU8bHWWtiw.png
+domitille-murat:
+  name: "Domitille Murat"
+  role: "Analyste patrimoniale"
+  specialty: "Spécialisée en reporting clients et consolidation"
+  photo: /images/9ypyzHWrBWEyzkCw5rE1u4GmZW8.jpg
+joel-villecroze:
+  name: "Joël Villecroze"
+  role: "Senior advisor"
+  specialty: "Région Paca"
+  photo: /images/j1QV7cetOF4iakYFiBLf4ynZQ.png
+gang-li:
+  name: "Gang Li"
+  role: "Expert"
+  specialty: "Spécialisé en relation corporate et contrôle de gestion"
+  photo: /images/RmfjMaF8Uh0kVOnPjvy6xRmeww.jpg
+carine-metahri:
+  name: "Carine Metahri"
+  role: "Experte"
+  specialty: "Spécialisé en ingénierie patrimoniale"
+  photo: /images/sPAcj3qf63AGAJdLkmfCDmF2Ts.jpg
+pierre-marchais:
+  name: "Pierre Marchais"
+  role: "Expert"
+  specialty: "Spécialisé en ingénierie patrimoniale & relation clients"
+  photo: /images/WldQvgI1cS0jMKxe6SW9QltaPo.jpg
+charles-antoine-bouvet:
+  name: "Charles-Antoine Bouvet"
+  role: "Associé"
+  specialty: "Spécialisé en offre commerciale"
+  photo: /images/PBnZcZvSfH5dUQz53cc2oI6o40.jpg
+brice-boyer:
+  name: "Brice Boyer"
+  role: "Associé"
+  specialty: "Spécialisé en stratégie patrimoniale & ingénierie fiscale"
+  photo: /images/WtfO9k93mFTlL7O1uZBc0GVkxw.jpg
+benjamin-collomb:
+  name: "Benjamin Collomb"
+  role: "Associé"
+  specialty: "Spécialisé en private equity immobilier"
+  photo: /images/tAz6gYFEoPWWOZwIWh9Dvx5Xxc.png
+sylvie-brien:
+  name: "Sylvie Brien"
+  role: "Experte"
+  specialty: "Spécialisé en Family Office"
+  photo: /images/b2rKQ2OI12RQpi38YcYebbxKrA.jpg
+charles-ventura:
+  name: "Charles Ventura"
+  role: "Conseiller en gestion de patrimoine"
+  specialty: "Spécialisé en immobilier"
+  photo: /images/InCszHRUV3ozFXoxdJh446cYipE.jpg
+anne-sophie-burtschy:
+  name: "Anne-Sophie Burtschy"
+  role: "Conseillère en gestion de patrimoine"
+  specialty: "Spécialisée en marchés financiers"
+  photo: /images/mev1rxlMigVVY5JMioLKeh4UE.jpg

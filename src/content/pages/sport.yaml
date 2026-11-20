@@ -1,0 +1,108 @@
+slug: sport
+seo:
+  title: "Financiale Sport — Gestion de patrimoine des sportifs de haut niveau"
+  description: "Financiale accompagne les sportifs de haut niveau à chaque étape, du premier contrat professionnel jusqu'à l'après-carrière."
+  image: /images/S5jPZdSW7EKjju3inIkIWtQQ.png
+blocks:
+  - type: hero
+    image: /images/S5jPZdSW7EKjju3inIkIWtQQ.png
+    title: "Votre carrière a une durée.\nVotre patrimoine, non."
+    text: "Financiale accompagne les sportifs de haut niveau à chaque étape, du premier contrat professionnel jusqu'à l'après-carrière. Une stratégie patrimoniale construite pour durer au-delà du sport."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: stats
+    items:
+      - { value: "25", label: "Sportifs accompagnés" }
+      - { value: "5", label: "Sports représentés" }
+      - { value: "20+", label: "D'années d'expertise" }
+      - { value: "1", label: "Interlocuteur" }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "Le sportif de haut niveau est une entreprise. Peu de gens le traitent comme tel."
+    paragraphs:
+      - "Revenus élevés et irréguliers, carrière courte, mobilité internationale, exposition médiatique, droits à l'image, risque de blessure, la situation patrimoniale d'un sportif professionnel n'a rien de commun avec celle d'un cadre ou d'un entrepreneur classique. La plupart des cabinets appliquent des solutions standard à des situations qui ne le sont pas. Financiale a construit une offre dédiée, portée par des experts qui connaissent le monde du sport de l'intérieur."
+    image: /images/JfEttn1qjJjHQU7USG0l5g0C8.png
+
+  - type: quote
+    image: /images/9KlHhIfIvatupPhBDxOYfxWPa4.png
+    quote: "\"Notre accompagnement ne se limite pas au financier. C'est l'ensemble du patrimoine du sportif qui est étudié afin de proposer une stratégie cohérente et rassurante pour son futur.\""
+    author: "Vincent Mallet, Associé Fondateur"
+
+  - type: tabs
+    eyebrow: "Nos clients"
+    title: "Nous accompagnons tout l'écosystème du sportif."
+    text: "Parce que la réussite patrimoniale d'un athlète dépend aussi de ceux qui l'entourent."
+    cta: { label: "Parler avec un expert", href: /contact }
+    items:
+      - title: "Sportifs"
+        text: "Vous manquez de temps et cherchez un partenaire de confiance pour structurer votre patrimoine, optimiser vos revenus et préparer sereinement votre reconversion. Nos experts vous accompagnent à chaque décision."
+        image: /images/MaWQwGQUjxmYBEs800yYE38t8.jpg
+      - title: "Clubs"
+        text: "Vous souhaitez que vos athlètes soient bien encadrés en dehors du terrain — pour leur tranquillité d'esprit et leur performance. Financiale devient votre partenaire patrimonial officiel."
+        image: /images/VNnlHs1BmvfsHE6an5JAeV2BLE.png
+      - title: "Agents"
+        text: "Accompagner votre client à 100% passe aussi par ses finances. Nous devenons le facilitateur patrimonial de vos athlètes, en coordination totale avec vous."
+        image: /images/fkfBTUqfM8Z6q6U4W8mv4qum3TQ.jpg
+      - title: "E-sport"
+        text: "Organisation d'événements, accompagnement de gamers professionnels, structuration patrimoniale des nouveaux athlètes du digital — nous avons l'expertise pour ce marché en pleine expansion."
+        image: /images/4cifijaEhvjmq7uaSJgL66emgI.jpg
+
+  - type: carousel
+    tone: light
+    eyebrow: "Nos expertises"
+    title: "Six enjeux. Six expertises. Une seule équipe."
+    text: "Les problématiques patrimoniales du sportif de haut niveau sont spécifiques. Voici comment nous y répondons."
+    items:
+      - title: "Prévoyance"
+        text: "Blessure, suspension, fin de contrat anticipée, les risques sont réels. Nous identifions et mettons en place les solutions de prévoyance adaptées à votre statut et vos revenus."
+        image: /images/HYHztuv7HuPrDsXUISfgoB67uKk.jpg
+      - title: "Immobilier & investissement"
+        text: "Constitution d'un patrimoine immobilier solide, diversification des placements, gestion des liquidités, nous transformons vos revenus présents en actifs durables."
+        image: /images/IP46AzRY8WdjOrHTZlj4E0laS8.jpg
+      - title: "Mobilité internationale"
+        text: "Double résidence fiscale, mercato à l'étranger, retour en France, nous anticipons chaque changement de pays pour que votre patrimoine reste optimisé où que vous soyez."
+        image: /images/TOQQM6WkW0YudIuRnAnIFQbY3ro.jpg
+      - title: "Reconversion & après carrière"
+        text: "La carrière s'arrête. Le niveau de vie, lui, ne devrait pas baisser. Nous préparons avec vous, dès aujourd'hui, la transition vers l'après-sport."
+        image: /images/sZI83uPQk1vDRZ4H8BtFLGefS4k.jpg
+      - title: "Fiscalité & optimisation"
+        text: "Salaire, primes de performance, contrats publicitaires, droits à l'image, chaque revenu a ses règles fiscales. Nous construisons la stratégie la plus efficiente pour votre situation."
+        image: /images/g6nTOWw2PA4TfZtU5GbePLuj1Fc.jpg
+      - title: "Droit à l'image"
+        text: "Structuration, exploitation et monétisation de votre image. Nous coordonnons les aspects juridiques, fiscaux et patrimoniaux pour valoriser et protéger ce que vous avez construit."
+        image: /images/vycYuxUcHmGolZeDyn65zyACl0.jpg
+
+  - type: process
+    tone: dark
+    eyebrow: "Processus"
+    title: "Une approche structurée, de l'audit à l'après-carrière."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit complet", text: "Analyse de vos revenus, actifs, contrats, exposition fiscale et besoins de protection. On part de votre réalité, pas d'un modèle standard." }
+      - { label: "2ème étape", title: "Stratégie personnalisée", text: "Un plan patrimonial documenté, par verticale, fiscalité, immobilier, prévoyance, droit à l'image, validé avec vous et vos conseils habituels." }
+      - { label: "3ème étape", title: "Mise en œuvre", text: "Nous activons notre réseau d'experts partenaires (avocats, notaires, experts-comptables, spécialistes droit du sport) et coordonnons l'ensemble." }
+      - { label: "4ème étape", title: "Suivi continu", text: "Reporting régulier, ajustements proactifs, accompagnement lors de chaque événement de carrière : transfert, renouvellement, blessure, retraite." }
+
+  - type: testimonial
+    eyebrow: "Témoignage"
+    title: "Votre avenir, notre présent"
+    image: /images/uNzgVvxE9aifmOLUpc4yUE3U.jpeg
+    quote: "« Grâce à Financiale, j'ai pu me concentrer sur ma carrière sportive sereinement. Aujourd'hui toujours présent à mes côtés, Financiale m'accompagne dans le suivi de mes investissements. »"
+    author: "Lorik Cana - Ancien footballeur professionnel"
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Une équipe qui connaît votre univers."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier, gentian-cani]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: cta
+    title: "Votre prochaine décision financière aura un impact sur votre après-carrière."
+    text: "Le diagnostic est gratuit, confidentiel et sans engagement. Un expert sport vous rappelle sous 48h."
+    image: /images/vV0ha7DCjhfdzbq5hwm90MvLvdc.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

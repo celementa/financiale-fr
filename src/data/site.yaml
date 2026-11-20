@@ -1,0 +1,71 @@
+# Réglages globaux du site : navigation, pied de page, coordonnées.
+name: "Financiale"
+legalName: "SARL Financiale Gestion Privée"
+url: "https://www.financiale.fr"
+phone: "01 45 25 29 69"
+phoneIntl: "+33145252969"
+email: "contact@financiale.fr"
+address:
+  street: "62, rue la Boétie"
+  postalCode: "75008"
+  city: "Paris"
+  country: "FR"
+mapsUrl: "https://maps.app.goo.gl/LeUAmMKD2JFrY1mZA"
+
+logo: /images/4187RpK6xsO25wmMxQB8SdBI98.svg        # logo sombre (en-tête)
+logoLight: /images/yQzyQAPElR1Jrq9WO9c8kpGSM.png    # logo clair (pied de page)
+
+nav:
+  - { label: "Accueil", href: / }
+  - { label: "Financiale", href: /financiale }
+  - { label: "Nos expertises", href: /nos-expertises }
+  - { label: "Sport", href: /sport }
+  - { label: "Family Office", href: /family-office }
+navCta: { label: "Contact", href: /contact }
+
+footer:
+  tagline: "Votre patrimoine mérite une attention sans compromis."
+  columns:
+    - title: "Menu"
+      links:
+        - { label: "Accueil", href: / }
+        - { label: "Financiale", href: /financiale }
+        - { label: "Nos expertises", href: /nos-expertises }
+        - { label: "Sport", href: /sport }
+        - { label: "Family Office", href: /family-office }
+        - { label: "Blog", href: /blog }
+    - title: "Expertises"
+      links:
+        - { label: "Accompagnement du dirigeant", href: /accompagnement-dirigeant }
+        - { label: "Aide juridique & fiscale", href: /aide-juridique-fiscale }
+        - { label: "Courtage d'assurance", href: /courtage-assurance }
+        - { label: "Méthodologie & approche patrimoniale", href: /methodologie-approche-patrimoniale }
+        - { label: "Investissements immobiliers", href: /investissements-immobiliers }
+        - { label: "Préparer votre retraite", href: /preparer-votre-retraite }
+        - { label: "Gestion financière", href: /gestion-financiere }
+    - title: "Support"
+      links:
+        - { label: "Contact", href: /contact }
+        - { label: "Mentions légales", href: /mentions-legales }
+  # Les icônes n'apparaissent que si une URL est renseignée.
+  social:
+    instagram: ""
+    facebook: ""
+    youtube: ""
+    linkedin: ""
+  credit: { label: "Créé par Celementa", href: "https://celementa.com" }
+  legal: >-
+    SARL FINANCIALE GESTION PRIVEE au capital de 51 010,00 € – 521 653 857 RCS PARIS – APE 6622Z -
+    Enregistrée à l’ORIAS (www.orias.fr) sous le n° 18000397 en qualité de Courtier en assurance,
+    Conseiller en investissements financiers adhérent de la CNCGP, association agréée par l’Autorité
+    des Marchés Financiers, et Courtier en opérations de banque et services de paiement. Carte
+    Transaction sur immeubles et fonds de commerce n° CPI 7501 2018 000 027 297 délivrée par la CCI de
+    Paris-Ile-de-France, ne peut recevoir aucun fonds, effet ou valeur. Assureur et garant : MMA IARD
+    Assurances Mutuelles 14 boulevard Marie et Alexandre Oyon 72030 Le Mans CEDEX 9. N° Responsabilité
+    Civile Professionnelle 112.786.342 - Adhérent n° 230795
+
+# Mention affichée sous chaque encadré « Bon à savoir » (disclaimer: true)
+disclaimer: >-
+  Les dispositifs fiscaux présentés dépendent de la situation individuelle de chaque client et sont
+  susceptibles d'évoluer selon les modifications législatives et réglementaires en vigueur. Ces
+  informations ne constituent pas un conseil personnalisé.

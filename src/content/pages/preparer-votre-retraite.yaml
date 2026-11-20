@@ -1,0 +1,88 @@
+slug: preparer-votre-retraite
+seo:
+  title: "Préparer votre retraite — Financiale"
+  description: "Construisez une stratégie de revenus complémentaires pour la retraite — PER, assurance-vie, immobilier — adaptée à votre situation et vos objectifs."
+  image: /images/BtJUBEL0ejCVjHk0bS8YqjyVM.jpg
+blocks:
+  - type: hero
+    image: /images/BtJUBEL0ejCVjHk0bS8YqjyVM.jpg
+    title: "La retraite ne se prépare\npas au dernier moment."
+    text: "Face à l'incertitude des régimes par répartition, Financiale vous accompagne dans la construction d'une stratégie de revenus complémentaires — financiers et immobiliers — adaptée à votre situation et vos objectifs."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "La question n'est plus « aurai-je assez ? » mais « qu'ai-je mis en place ? »"
+    paragraphs:
+      - "Les régimes de retraite par répartition ont été réformés à plusieurs reprises et continueront de l'être. La pension légale seule ne suffira pas à maintenir le niveau de vie de la plupart des cadres, dirigeants et professions libérales. Anticiper est devenu une nécessité — et plus tôt on commence, plus les leviers sont puissants."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"J'approche la cinquantaine et je n'ai pas encore de stratégie claire pour préparer ma retraite.\""
+      - "\"Je cotise mais je sais que ma pension ne couvrira pas mon niveau de vie actuel — je ne sais pas comment combler le gap.\""
+      - "\"Je suis dirigeant TNS, ma protection retraite est faible et je ne sais pas quels dispositifs sont adaptés à mon statut.\""
+    outro: "Financiale construit avec vous une stratégie de retraite sur-mesure — adaptée à votre âge, votre capacité d'épargne, votre statut et vos objectifs de revenus — sur deux axes complémentaires : les placements financiers et l'investissement immobilier."
+    image: /images/aGO4akvcPyLj2dKm09Wti8INe4k.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - { title: "Plan d'épargne retraite (PER)", text: "Le PER est aujourd'hui le dispositif de référence pour la retraite — versements déductibles du revenu imposable, capital ou rente à la sortie. Nous optimisons votre stratégie de versements selon votre tranche marginale d'imposition.", image: /images/THzDQIgJLA0C6OtEzZkQOAW5zc.jpg }
+      - { title: "Assurance-vie & capitalisation", text: "Enveloppe souple, fiscalité avantageuse après 8 ans, transmission optimisée — l'assurance-vie reste un pilier incontournable de toute stratégie de retraite bien structurée.", image: /images/uBXHWqiBQoRraC9OSYPkCLYyCzg.jpg }
+      - { title: "Retraite Madelin & Article 83", text: "Dispositifs spécifiques aux TNS et salariés cadres — cotisations déductibles, constitution d'une rente viagère complémentaire. Nous analysons leur pertinence selon votre statut.", image: /images/2x7z3Kp7EDx230P9UDch7YtuA.jpg }
+      - { title: "Immobilier locatif & LMNP", text: "Constitution d'un patrimoine immobilier générateur de revenus complémentaires à la retraite — locatif nu, meublé géré, LMNP. Le levier crédit permet de construire cet actif avec un effort d'épargne maîtrisé.", image: /images/zELBuCoeIIsvAQfafIJeREVU.jpg }
+      - { title: "Pierre papier — SCPI", text: "Revenus réguliers sans contraintes de gestion — les SCPI permettent d'accéder à l'immobilier collectif avec des tickets d'entrée accessibles et une diversification immédiate.", image: /images/sgONisikFiOF463PX4PFav1LIo.jpg }
+      - { title: "Prévoyance & assurance décès-invalidité", text: "Protéger vos proches et sécuriser votre patrimoine en cas d'aléas — incapacité, invalidité, décès — avant même la retraite. Un volet souvent négligé mais indispensable.", image: /images/n9QDqklk8X11AdSTjM7qozdJGLY.jpg }
+
+  - type: focus
+    eyebrow: "Le plan d'épargne retraite"
+    title: "Le PER : le dispositif retraite le plus efficace fiscalement depuis la loi Pacte."
+    image: /images/AdYdOa7x8ncA1J4PLl4cp1RMylQ.jpg
+    paragraphs:
+      - "Instauré par la loi Pacte en 2019, le Plan d'Épargne Retraite (PER) a unifié et simplifié les anciens dispositifs — PERP, Madelin, Article 83, PERCO. Il est aujourd'hui le dispositif de référence pour construire une épargne retraite complémentaire avec un avantage fiscal immédiat."
+      - "Le principe est simple : les versements volontaires sur un PER sont déductibles du revenu imposable dans la limite d'un plafond annuel. Plus votre tranche marginale d'imposition est élevée, plus l'avantage fiscal est important. Un dirigeant à 45% de TMI qui verse 10 000€ sur son PER réalise une économie d'impôt immédiate de 4 500€."
+      - "À la retraite, le capital peut être récupéré en rente viagère ou en capital selon vos besoins — avec une fiscalité allégée grâce à l'abattement de 10% sur les pensions. Le PER est également transmissible en cas de décès avant la liquidation."
+    boxTitle: "Bon à savoir"
+    box:
+      - "Versements déductibles du revenu imposable dans la limite de 10% des revenus professionnels"
+      - "Sortie en capital ou en rente au choix à la retraite"
+      - "Déblocage anticipé possible en cas d'acquisition de résidence principale ou d'accident de la vie"
+      - "Plafonds cumulables avec les plafonds non utilisés des 3 années précédentes"
+      - "Transmissible aux bénéficiaires désignés en cas de décès avant liquidation"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit retraite & projection", text: "Analyse de vos droits acquis, simulation de votre pension légale estimée, identification du gap entre votre pension et votre niveau de vie cible. Un état des lieux précis avant toute recommandation." }
+      - { label: "2ème étape", title: "Stratégie de revenus complémentaires", text: "Construction d'un plan sur-mesure combinant placements financiers et immobilier — calibré selon votre âge, votre capacité d'épargne, votre statut et votre fiscalité actuelle. Chaque dispositif est justifié et documenté." }
+      - { label: "3ème étape", title: "Mise en place & suivi annuel", text: "Souscription et coordination des dispositifs retenus, ajustements annuels en fonction de l'évolution de votre situation et des réformes fiscales. Votre stratégie retraite évolue avec votre vie." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Courtage d'assurance", text: "Garanties locatives, assurance emprunteur, prévoyance — protéger vos investissements immobiliers à chaque étape.", image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg, href: /courtage-assurance }
+      - { title: "Investissements immobiliers", text: "Structuration, financement, optimisation fiscale — construire et développer un patrimoine immobilier performant.", image: /images/Fj7eU5lyfeLews9ZPDGlWVtKHk.jpg, href: /investissements-immobiliers }
+      - { title: "Accompagnement du dirigeant", text: "Holding, cession, transmission d'entreprise — les enjeux juridiques et fiscaux spécifiques aux chefs d'entreprise.", image: /images/R1z8F1VOfbVRQu1HHWUpXcdAPi0.jpg, href: /accompagnement-dirigeant }
+
+  - type: cta
+    title: "Dans 10 ans, vous serez heureux d'avoir agi aujourd'hui."
+    text: "Un expert retraite Financiale prend contact avec vous sous 48h pour une projection confidentielle de votre situation, sans engagement."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

@@ -1,0 +1,42 @@
+---
+/** « Le contexte » : texte, citations « Vous reconnaissez-vous ? », image portrait. Fond bleu. */
+import Img from '../Img.astro';
+const { eyebrow, title, paragraphs = [], quotesTitle, quotes = [], outro, image } = Astro.props;
+---
+<section class="section section--navy context">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="context__grid">
+      <div class="context__text reveal">
+        <h2 class="h4">{title}</h2>
+        <div class="context__body">
+          {paragraphs.map((p: string) => <p>{p}</p>)}
+          {quotes.length > 0 && (
+            <div class="context__quotes">
+              {quotesTitle && <p class="context__qtitle">{quotesTitle}</p>}
+              {quotes.map((q: string) => <blockquote>{q}</blockquote>)}
+            </div>
+          )}
+          {outro && <p>{outro}</p>}
+        </div>
+      </div>
+      <div class="media context__media reveal"><Img src={image} alt="" sizes="(max-width: 900px) 90vw, 420px" /></div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .context__grid { display: grid; grid-template-columns: 1fr 420px; gap: clamp(2rem, 6vw, 5rem); align-items: start; padding-left: clamp(0rem, 7vw, 7rem); margin-top: 2.5rem; }
+  .context__body { margin-top: 2.5rem; max-width: 30rem; font-size: var(--fs-small); line-height: 1.6; }
+  .context__quotes { margin: 1.75rem 0; }
+  .context__qtitle { font-size: var(--fs-lead); font-weight: 600; margin-bottom: .75rem; }
+  .context blockquote {
+    margin: 0 0 .9rem; font-family: var(--font-display); font-style: italic; font-weight: 200;
+    font-size: 1.1rem; line-height: 1.4;
+  }
+  .context__media { aspect-ratio: 475 / 784; }
+  @media (max-width: 900px) {
+    .context__grid { grid-template-columns: 1fr; padding-left: 0; }
+    .context__media { max-width: 420px; }
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+/**
+ * Image optimisée. Le contenu référence les images par chemin « /images/<fichier> » ;
+ * le fichier source est dans src/assets/images/. À la compilation, Astro/sharp génère
+ * des variantes AVIF + WebP redimensionnées (srcset) : aucune image d'origine n'est servie.
+ *
+ * Props :
+ *  - src     : "/images/xxx.jpg"
+ *  - alt     : texte alternatif ("" = image décorative)
+ *  - sizes   : attribut sizes (par défaut 100vw)
+ *  - widths  : largeurs générées (par défaut adaptées à `sizes`)
+ *  - eager   : true pour l'image principale au-dessus de la ligne de flottaison (LCP)
+ */
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  src: string;
+  alt?: string;
+  sizes?: string;
+  widths?: number[];
+  eager?: boolean;
+  class?: string;
+  quality?: number;
+}
+
+const files = import.meta.glob<{ default: ImageMetadata }>(
+  '/src/assets/images/*.{jpg,jpeg,png,webp,avif,svg}',
+  { eager: true },
+);
+
+const {
+  src, alt = '', sizes = '100vw', widths, eager = false, class: cls, quality = 72,
+} = Astro.props;
+
+const name = src.replace(/^\/?images\//, '');
+const mod = files[`/src/assets/images/${name}`];
+
+if (!mod && import.meta.env.PROD && process.env.STRICT_ASSETS === '1') {
+  throw new Error(`Image manquante : src/assets/images/${name} — lancez « npm run fetch-assets ».`);
+}
+
+const isSvg = name.endsWith('.svg');
+const w = widths ?? (sizes === '100vw' ? [640, 960, 1280, 1600, 1920, 2400] : [320, 480, 640, 960, 1280]);
+---
+{mod ? (
+  isSvg ? (
+    <img src={mod.default.src} alt={alt} width={mod.default.width} height={mod.default.height}
+      class={cls} loading={eager ? 'eager' : 'lazy'} decoding="async" />
+  ) : (
+    <Picture
+      src={mod.default}
+      alt={alt}
+      formats={['avif', 'webp']}
+      fallbackFormat={name.endsWith('.png') ? 'png' : 'jpg'}
+      widths={w.filter((x) => x <= mod.default.width).concat(w.some((x) => x <= mod.default.width) ? [] : [mod.default.width])}
+      sizes={sizes}
+      quality={quality}
+      class={cls}
+      loading={eager ? 'eager' : 'lazy'}
+      fetchpriority={eager ? 'high' : 'auto'}
+      decoding="async"
+    />
+  )
+) : (
+  <span class:list={['img-missing', cls]} role="img" aria-label={alt} data-missing={name}></span>
+)}

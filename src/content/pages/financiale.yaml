@@ -1,0 +1,78 @@
+slug: financiale
+seo:
+  title: "Le cabinet Financiale — 20 ans d'expertise patrimoniale indépendante"
+  description: "Cabinet indépendant de gestion de patrimoine à Paris, Financiale accompagne dirigeants, expatriés et familles dans les décisions qui comptent vraiment."
+  image: /images/55Cp7fxSnVet8178VdmLYx82xQE.jpg
+blocks:
+  - type: hero
+    variant: banner
+    image: /images/55Cp7fxSnVet8178VdmLYx82xQE.jpg
+    eyebrow: "Financiale"
+    title: "20 ans d'expertise patrimoniale.\nUne seule obsession : votre indépendance."
+    text: "Financiale est un cabinet indépendant de gestion de patrimoine basé à Paris. Fondé sur des valeurs d'excellence, de transparence et d'engagement dans la durée, nous accompagnons dirigeants, expatriés et familles fortunées dans les décisions qui comptent vraiment."
+
+  - type: story
+    eyebrow: "Notre histoire"
+    title: "Né d'une conviction. Construit dans la durée."
+    paragraphs:
+      - "Financiale a été fondé avec une conviction simple : la gestion de patrimoine mérite mieux que des solutions standardisées vendues sous contrainte de distribution. Depuis plus de vingt ans, nous avons construit un cabinet indépendant — libre de toute obligation envers un assureur, une banque ou un gestionnaire de fonds."
+      - "Cette indépendance n'est pas un argument commercial. C'est notre architecture de conseil."
+      - "Aujourd'hui, Financiale réunit une équipe pluridisciplinaire d'experts couvrant l'intégralité du spectre patrimonial — juridique, fiscal, financier, immobilier, prévoyance — au service de clients qui ont des enjeux complexes et exigent des réponses à la hauteur."
+    link: { label: "Entrons en contact", href: /contact }
+    image: /images/i8vxRnwrYKb2hsfGMDjLOKaLrdc.jpg
+
+  - type: statsBanner
+    image: /images/JYKtjIpm9UBYDJlBuhUEMJ4D6s.png
+    title: "Des collaborations nées sur la confiance et des résultats"
+    items:
+      - { value: "450M€", label: "D'encours gérés" }
+      - { value: "20+", label: "Années d'expérience" }
+      - { value: "1000+", label: "Clients accompagnés" }
+      - { value: "5+", label: "Expertises réunies" }
+
+  - type: values
+    eyebrow: "Nos valeurs"
+    title: "Ce qui nous distingue ne se vend pas.\nÇa se prouve."
+    text: "Trois principes fondateurs qui structurent chacune de nos décisions."
+    items:
+      - { title: "Indépendance totale", text: "Aucun lien capitalistique avec une banque, un assureur ou un gestionnaire d'actifs. Nous sélectionnons les meilleures solutions du marché sans contrainte de distribution, uniquement guidés par l'intérêt de nos clients." }
+      - { title: "Transparence", text: "Nos services sont soumis à honoraires, définis en amont dans une lettre de mission. Vous savez exactement ce que vous payez, pourquoi, et ce que ça couvre. Aucune rétrocession cachée, aucun conflit d'intérêt." }
+      - { title: "Engagement durable", text: "Nous ne sommes pas des vendeurs de produits. Nous sommes des conseillers de long terme. Votre patrimoine évolue, vos projets de vie aussi. Nous restons à vos côtés à chaque étape pour vous fournir le meilleur accompagnement." }
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Notre méthode d'accompagnement."
+    image: /images/9Nbr70lgAq2iWyT3ByPLmjB4QE.jpg
+    steps:
+      - { label: "1ère étape", title: "Audit global de votre situation", text: "Analyse complète de votre patrimoine privé et professionnel, actifs, passifs, fiscalité, prévoyance, objectifs. Un regard d'ensemble pour éviter les angles morts." }
+      - { label: "2ème étape", title: "Architecture patrimoniale sur-mesure", text: "Nous élaborons avec vous une stratégie cohérente avec vos projets de vie, succession, constitution de rente, optimisation fiscale, transmission. Rien de standard, tout de circonstancié." }
+      - { label: "3ème étape", title: "Mise en œuvre", text: "Nos experts assurent la mise en place des préconisations et deviennent le relais entre vous et vos interlocuteurs habituels, avocat, notaire, agent immobilier, expert-comptable." }
+      - { label: "4ème étape", title: "Suivi continu", text: "Votre patrimoine évolue. Nous aussi. Reporting régulier, ajustements proactifs, accompagnement à chaque événement de vie significatif." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "L'équipe dirigeante"
+    members: [vincent-mallet, carole-mallet, christine-leroy]
+
+  - type: teamCarousel
+    title: "L'équipe experte & conseil"
+    members:
+      - domitille-murat
+      - joel-villecroze
+      - gang-li
+      - carine-metahri
+      - pierre-marchais
+      - anne-emmanuelle-bannier
+      - charles-antoine-bouvet
+      - brice-boyer
+      - benjamin-collomb
+      - sylvie-brien
+      - charles-ventura
+      - anne-sophie-burtschy
+
+  - type: cta
+    title: "Votre patrimoine mérite toute notre attention"
+    text: "Le diagnostic est gratuit, confidentiel et sans engagement. Un conseiller senior vous rappelle sous 48h."
+    image: /images/QdRL6kHXc42e9QgQMdUc0Ss30w.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

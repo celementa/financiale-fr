@@ -1,0 +1,21 @@
+---
+/** Citation sur image pleine largeur. */
+import Img from '../Img.astro';
+const { image, quote, author } = Astro.props;
+---
+<section class="quote">
+  <div class="quote__bg"><Img src={image} alt="" /></div>
+  <figure class="container quote__inner reveal">
+    <blockquote class="h3">{quote}</blockquote>
+    <figcaption class="lead">{author}</figcaption>
+  </figure>
+</section>
+
+<style>
+  .quote { position: relative; isolation: isolate; color: var(--paper); background: var(--navy); min-height: clamp(520px, 60vw, 896px); display: flex; align-items: center; }
+  .quote__bg { position: absolute; inset: 0; z-index: -1; }
+  .quote__bg :global(img) { width: 100%; height: 100%; object-fit: cover; }
+  .quote::after { content: ''; position: absolute; inset: 0; z-index: -1; background: rgba(8, 8, 8, .35); }
+  .quote__inner { margin-block: var(--section-y); }
+  .quote blockquote { margin: 0 0 2rem; max-width: 20em; font-family: var(--font-display); font-weight: 300; line-height: 1.15; }
+</style>

@@ -1,0 +1,28 @@
+# Déploiement sur le serveur UE de Financiale :
+#   cp deploy/.env.example .env && cp form-handler/.env.example form-handler/.env   (puis compléter)
+#   docker compose up -d --build
+services:
+  web:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp"
+    env_file: .env
+    volumes:
+      - caddy_data:/data      # certificats TLS
+      - caddy_config:/config
+    depends_on:
+      - form
+
+  form:
+    build: ./form-handler
+    restart: unless-stopped
+    env_file: ./form-handler/.env
+    expose:
+      - "3000"
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,87 @@
+slug: courtage-assurance
+seo:
+  title: "Courtage d'assurance indépendant — Financiale"
+  description: "Financiale sélectionne pour vous les contrats les plus adaptés à votre situation patrimoniale — en toute indépendance, sur l'ensemble du marché."
+  image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg
+blocks:
+  - type: hero
+    image: /images/8TmQscEE5gDd0MrdxtdlRYthtI.jpg
+    title: "L'assurance que vous méritez ne s'achète pas en ligne."
+    text: "Financiale sélectionne pour vous les contrats les plus adaptés à votre situation patrimoniale — en toute indépendance, sur l'ensemble du marché."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "Un secteur opaque. Un interlocuteur indépendant."
+    paragraphs:
+      - "Le marché de l'assurance est dense, technique et souvent peu lisible — diversité des contrats, frais cachés, supports éligibles variables, options complexes. La plupart des souscripteurs signent sans réellement comprendre ce qu'ils choisissent, ni si c'est adapté à leur situation."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"J'ai des contrats d'assurance-vie mais je ne sais plus s'ils sont encore adaptés à mes objectifs actuels.\""
+      - "\"Je ne comprends pas vraiment les différences entre les produits qu'on me propose — j'ai l'impression de subir les recommandations.\""
+      - "\"Je suis dirigeant et je ne sais pas si mes garanties professionnelles couvrent vraiment les bons risques.\""
+    outro: "Financiale est enregistré à l'ORIAS en qualité de courtier en assurance. Notre rôle est de mettre les compagnies en concurrence et de sélectionner, pour vous, la solution la plus adaptée à votre profil — sans contrainte de distribution."
+    image: /images/hEfZa5hbnB9t9t3p7jldb6ahd0Y.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - { title: "Épargne financière", text: "PEA, PEA-PME, comptes-titres, SCPI, OPCI — nous construisons une allocation diversifiée et cohérente avec votre patrimoine global.", image: /images/sjIcziEKFcgDBIZDbsDpXquFiU.jpg }
+      - { title: "Assurances de personnes", text: "Prévoyance, garantie emprunteur, indemnités journalières, capital décès, rente éducation — nous protégeons les individus et leurs proches face aux aléas de la vie.", image: /images/oL2wyHzh5kfwz7WnsBzC27ZVVk.jpg }
+      - { title: "Assurances de biens", text: "Résidence principale, biens de valeur, responsabilité civile familiale et professionnelle — nous auditons vos garanties existantes et les ajustons à votre situation réelle.", image: /images/dDhvTVEiVQfYLrqYvQPcXTinds.jpg }
+      - { title: "Assurances professionnelles", text: "Garantie homme-clé, perte d'emploi, santé et prévoyance collectives, épargne retraite collective, IFC — nous couvrons l'ensemble des risques liés à votre activité.", image: /images/9YvCizlC5vMUj6pFVJFHoqDqHiw.jpg }
+      - { title: "Assurance-vie & capitalisation", text: "Contrats en France et au Luxembourg, sélection des supports, arbitrages — nous optimisons vos enveloppes d'épargne pour conjuguer valorisation, fiscalité et transmission.", image: /images/OF78XlE9AJScRbKkwYWAIctfLCQ.jpg }
+      - { title: "Épargne retraite", text: "PER, Madelin, Article 83 — nous identifions les dispositifs les plus adaptés à votre statut et vos objectifs pour préparer votre retraite dans les meilleures conditions fiscales.", image: /images/qTAb4OvW8gjSZHKC0ZBIH8ia4xA.jpg }
+
+  - type: focus
+    eyebrow: "L'audit de contrats existants"
+    title: "Vos contrats actuels sont-ils encore adaptés ?"
+    image: /images/RsCwE97zKzmDHBHOzyM6Vg0.jpg
+    paragraphs:
+      - "La plupart des contrats d'assurance sont souscrits à un moment donné de la vie et rarement réévalués. Or votre situation évolue — patrimoine, statut, objectifs, fiscalité — et vos garanties doivent évoluer avec elle."
+      - "Financiale propose un audit complet de vos contrats existants : analyse des frais, des supports, des garanties, de la cohérence avec votre situation patrimoniale actuelle. À l'issue de cet audit, nous lançons si nécessaire un appel d'offres pour renégocier ou transférer vos contrats vers des solutions plus performantes."
+      - "Un réajustement de contrat se traduit fréquemment par une économie significative sur les frais et une meilleure adéquation entre les garanties souscrites et les risques réellement couverts."
+    boxTitle: "Bon à savoir"
+    box:
+      - "L'audit de vos contrats est réalisé sans engagement de votre part"
+      - "Aucune compagnie ne nous rémunère pour orienter nos recommandations"
+      - "Le transfert d'un contrat d'assurance-vie peut être réalisé sans fiscalité dans certains cas (loi Pacte)"
+      - "Nos honoraires sont définis en amont et transparents"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit de votre situation", text: "Recensement de vos contrats existants, analyse des garanties, des frais et de leur cohérence avec vos objectifs patrimoniaux actuels. Un état des lieux objectif et sans complaisance." }
+      - { label: "2ème étape", title: "Mise en concurrence & sélection", text: "Nous consultons l'ensemble des compagnies présentes sur le marché et sélectionnons les solutions les mieux adaptées à votre profil — sans contrainte de distribution ni conflit d'intérêt." }
+      - { label: "3ème étape", title: "Mise en place & suivi", text: "Nous gérons les formalités de souscription ou de transfert, puis assurons un suivi régulier de vos contrats pour les ajuster à l'évolution de votre situation." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Gestion financière", text: "Allocation d'actifs, mandat de gestion, produits structurés — piloter vos actifs financiers avec rigueur et indépendance.", image: /images/jaxHO9Fn3ZfYeGHgjoqH2OfRqs.jpg, href: /gestion-financiere }
+      - { title: "Family Office", text: "Pour les dirigeants dont le patrimoine dépasse le cadre de l'entreprise et nécessite une coordination globale.", image: /images/yN1OYgVx5PUP9Dtg1IDatab1NuU.jpg, href: /family-office }
+      - { title: "Préparer votre retraite", text: "Anticiper la transition, structurer les revenus complémentaires, préserver votre niveau de vie dans la durée.", image: /images/X5m65PTS6OPBDfXmfonixmif6E.jpg, href: /preparer-votre-retraite }
+
+  - type: cta
+    title: "Vos contrats actuels méritent peut-être mieux."
+    text: "Un expert courtage prend contact avec vous sous 48h pour un audit confidentiel de vos contrats existants, sans engagement."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

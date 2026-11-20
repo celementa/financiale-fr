@@ -1,0 +1,72 @@
+---
+/** Onglets en accordéon (ex. « Nos clients » sur la page Sport) avec image associée. */
+import Img from '../Img.astro';
+import Button from '../Button.astro';
+const { eyebrow, title, text, items = [], cta } = Astro.props;
+const uid = `tabs-${Math.random().toString(36).slice(2, 8)}`;
+---
+<section class="section tabs" data-tabs>
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="tabs__grid">
+      <div>
+        <h2>{title}</h2>
+        <p class="tabs__intro">{text}</p>
+        <div class="tabs__list" role="tablist">
+          {items.map((it: any, i: number) => (
+            <div class="tabs__item">
+              <button role="tab" id={`${uid}-t${i}`} aria-controls={`${uid}-p${i}`} aria-selected={i === 0 ? 'true' : 'false'} data-tab={i}>
+                <span class="h5">{it.title}</span><span class="tabs__plus" aria-hidden="true"></span>
+              </button>
+              <div role="tabpanel" id={`${uid}-p${i}`} aria-labelledby={`${uid}-t${i}`} hidden={i !== 0}>
+                <p>{it.text}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        {cta && <Button href={cta.href} label={cta.label} variant="light" class="tabs__cta" />}
+      </div>
+      <div class="tabs__media">
+        {items.map((it: any, i: number) => (
+          <div class:list={['media', i === 0 && 'is-active']} data-tab-media={i}>
+            <Img src={it.image} alt="" sizes="(max-width: 900px) 90vw, 576px" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .tabs__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: start; }
+  .tabs__intro { margin: 1.5rem 0 2.5rem; max-width: 30rem; }
+  .tabs__item { border-bottom: 1px solid var(--line-dark); }
+  .tabs__item button {
+    width: 100%; display: flex; justify-content: space-between; align-items: center;
+    padding: 1.1rem 0; background: none; border: 0; cursor: pointer; text-align: left;
+  }
+  .tabs__plus { position: relative; width: 14px; height: 14px; }
+  .tabs__plus::before, .tabs__plus::after { content: ''; position: absolute; left: 0; top: 6.5px; width: 14px; height: 1px; background: currentColor; transition: transform .25s; }
+  .tabs__plus::after { transform: rotate(90deg); }
+  [aria-selected='true'] .tabs__plus::after { transform: rotate(0); }
+  [role='tabpanel'] { padding-bottom: 1.25rem; font-size: var(--fs-small); max-width: 32rem; }
+  .tabs :global(.tabs__cta) { margin-top: 2rem; }
+  .tabs__media { position: relative; aspect-ratio: 576 / 769; }
+  .tabs__media .media { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+  .tabs__media .media.is-active { opacity: 1; }
+  @media (max-width: 900px) { .tabs__grid { grid-template-columns: 1fr; } .tabs__media { max-width: 460px; } }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-tabs]').forEach((root) => {
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[data-tab]')];
+    const media = [...root.querySelectorAll<HTMLElement>('[data-tab-media]')];
+    tabs.forEach((tab, i) => tab.addEventListener('click', () => {
+      tabs.forEach((t, j) => {
+        t.setAttribute('aria-selected', String(i === j));
+        document.getElementById(t.getAttribute('aria-controls')!)!.hidden = i !== j;
+        media[j]?.classList.toggle('is-active', i === j);
+      });
+    }));
+  });
+</script>

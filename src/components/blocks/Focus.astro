@@ -1,0 +1,39 @@
+---
+/** Zoom sur un dispositif : titre, image, texte, encadré « Bon à savoir », mention légale. */
+import Img from '../Img.astro';
+import { site } from '../../lib/data';
+const { eyebrow, title, image, paragraphs = [], boxTitle = 'Bon à savoir', box = [], disclaimer = false } = Astro.props;
+---
+<section class="section section--white focus">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <h2 class="focus__title">{title}</h2>
+    <div class="focus__grid">
+      <div class="media focus__media reveal"><Img src={image} alt="" sizes="(max-width: 900px) 90vw, 600px" /></div>
+      <div class="focus__text reveal">
+        {paragraphs.map((p: string) => <p>{p}</p>)}
+        {box.length > 0 && (
+          <aside class="focus__box">
+            <p class="focus__box-title">{boxTitle}</p>
+            <ul>{box.map((b: string) => <li>{b}</li>)}</ul>
+          </aside>
+        )}
+        {disclaimer && <p class="focus__disclaimer">{site.disclaimer}</p>}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .focus__title { max-width: 18em; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+  .focus__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .focus__media { aspect-ratio: 663 / 617; }
+  .focus__text { font-size: var(--fs-small); line-height: 1.65; max-width: 34rem; }
+  .focus__box { background: var(--paper); padding: 1.75rem; margin: 2rem 0 1.5rem; }
+  .focus__box-title { font-size: var(--fs-lead); font-weight: 600; color: var(--navy); margin-bottom: 1rem; }
+  .focus__box ul { margin: 0; padding: 0; list-style: none; display: grid; gap: .65rem; }
+  .focus__box li { padding-left: 1.5rem; position: relative; }
+  .focus__box li::before { content: ''; position: absolute; left: 0; top: .55em; width: 8px; height: 8px; background: var(--bronze); }
+  .focus__disclaimer { font-size: .8125rem; color: rgba(8, 8, 8, .6); }
+  @media (max-width: 900px) { .focus__grid { grid-template-columns: 1fr; } }
+</style>

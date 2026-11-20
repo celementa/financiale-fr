@@ -1,0 +1,41 @@
+# Page Contact — textes et champs du formulaire.
+seo:
+  title: "Contact — Financiale, cabinet de gestion de patrimoine à Paris 8e"
+  description: "Un premier échange confidentiel, sans engagement. Un conseiller senior vous rappelle sous 48h."
+title: "Parlons de votre patrimoine."
+text: "Un premier échange confidentiel, sans engagement. Un conseiller senior vous rappelle sous 48h."
+officeTitle: "Financiale — Paris 8ème"
+images:
+  - /images/QdRL6kHXc42e9QgQMdUc0Ss30w.jpg
+  - /images/ZIPpBrIzorsjw2JDzNHug8VJOFI.jpeg
+submitLabel: "Demander mon diagnostic"
+successMessage: "Merci. Votre demande a bien été envoyée — un conseiller vous rappelle sous 48h."
+errorMessage: "L'envoi a échoué. Merci de réessayer ou de nous appeler au 01 45 25 29 69."
+privacyNotice: >-
+  Les informations recueillies sont utilisées uniquement par Financiale pour répondre à votre demande
+  et ne sont jamais transmises à des tiers. Elles sont hébergées dans l'Union européenne. Vous disposez
+  d'un droit d'accès, de rectification et de suppression : voir nos mentions légales.
+profiles:
+  - "Dirigeant d'entreprise"
+  - "Profession libérale"
+  - "Cadre supérieur / salarié"
+  - "Sportif de haut niveau"
+  - "Expatrié / non-résident"
+  - "Retraité"
+  - "Autre"
+topics:
+  - "Préparer ma retraite"
+  - "Optimiser ma fiscalité"
+  - "Structurer mon patrimoine"
+  - "Cession d'entreprise"
+  - "Transmettre mon patrimoine"
+  - "Investir dans l'immobilier"
+  - "Gérer mes actifs financiers"
+  - "Family Office"
+  - "Accompagnement sportif"
+  - "Autre"
+horizons:
+  - "Dans les 3 prochains mois"
+  - "Dans les 6 prochains mois"
+  - "Dans l'année"
+  - "À plus long terme"

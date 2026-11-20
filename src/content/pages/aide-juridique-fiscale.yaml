@@ -1,0 +1,86 @@
+slug: aide-juridique-fiscale
+seo:
+  title: "Aide juridique et fiscale — Financiale"
+  description: "Financiale vous accompagne sur l'ensemble des enjeux juridiques et fiscaux liés à votre patrimoine — structuration, optimisation, transmission."
+  image: /images/TmBQ6jq0w8kpahshPD99OsMZmI.jpg
+blocks:
+  - type: hero
+    image: /images/TmBQ6jq0w8kpahshPD99OsMZmI.jpg
+    title: "La fiscalité n'attend pas.\nVotre stratégie non plus."
+    text: "Financiale vous accompagne sur l'ensemble des enjeux juridiques et fiscaux liés à votre patrimoine — structuration, optimisation, transmission — avec une approche globale et coordonnée."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: context
+    eyebrow: "Le contexte"
+    title: "Des décisions complexes aux conséquences durables."
+    paragraphs:
+      - "Chaque décision patrimoniale a une dimension juridique et fiscale — souvent sous-estimée au moment où elle est prise, souvent coûteuse à corriger après. Mode de détention des actifs, structuration d'une SCI, choix du régime matrimonial, démembrement — ces sujets exigent une expertise pointue et une vision d'ensemble."
+    quotesTitle: "Vous reconnaissez-vous ?"
+    quotes:
+      - "\"J'ai investi en immobilier en nom propre mais je me demande si une SCI n'aurait pas été plus avantageuse fiscalement.\""
+      - "\"Je souhaite transmettre une partie de mon patrimoine à mes enfants mais je ne sais pas quel mécanisme choisir.\""
+      - "\"Mon régime matrimonial n'a pas été revu depuis des années — je ne sais pas s'il protège vraiment mes intérêts.\""
+    outro: "Financiale travaille en partenariat étroit avec des professionnels du droit — notaires, avocats fiscalistes — pour vous apporter une réponse complète, coordonnée et adaptée à votre situation spécifique."
+    image: /images/8bEn0cOLp0D8FVcOBiQsv0vcQ.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous faisons pour vous."
+    items:
+      - { title: "Mode de détention des actifs", text: "Investissement en direct ou via société, SCI, SARL de famille, holding — nous analysons pour chaque situation le mode de détention le plus adapté à vos objectifs fiscaux et patrimoniaux de long terme.", image: /images/7xDvCnntOSVo5c2Gzt4BJX8I8.jpg }
+      - { title: "Structuration immobilière", text: "SCI à l'IS ou à l'IR, SARL de famille, démembrement — nous optimisons la structure de vos opérations immobilières pour réduire la fiscalité et faciliter la transmission.", image: /images/gQHQCc9zHjRtEeiUytCN4mFlo.jpg }
+      - { title: "Démembrement de propriété", text: "Usufruit, nue-propriété, démembrement temporaire — nous vous accompagnons dans ces mécanismes puissants pour transmettre votre patrimoine, réduire votre fiscalité et vous constituer des actifs à moindre coût.", image: /images/vRQwgDeSvfluTsx26zKCp97J6c.jpg }
+      - { title: "Droit civil & protection familiale", text: "Clauses bénéficiaires, testaments, régimes matrimoniaux, pactes civils — nous coordonnons avec nos partenaires juridiques la protection de vos proches et l'organisation de votre patrimoine familial.", image: /images/n9QDqklk8X11AdSTjM7qozdJGLY.jpg }
+      - { title: "Optimisation fiscale globale", text: "IFI, plus-values, revenus fonciers, fiscalité des cessions — nous construisons une stratégie fiscale cohérente avec l'ensemble de votre situation patrimoniale et professionnelle.", image: /images/0EeIMu5Ds3gU4ayp3fENsQl14.jpg }
+
+  - type: focus
+    eyebrow: "Le démembrement de propriété"
+    title: "Transmettre aujourd'hui, conserver demain."
+    image: /images/RsCwE97zKzmDHBHOzyM6Vg0.jpg
+    paragraphs:
+      - "Le démembrement de propriété consiste à séparer la pleine propriété d'un bien en deux droits distincts : l'usufruit — le droit d'utiliser le bien et d'en percevoir les revenus — et la nue-propriété — le droit de disposer du bien à terme. Cette séparation ouvre des opportunités considérables en matière de transmission et d'optimisation fiscale."
+      - "Dans le cadre d'une donation en nue-propriété à ses enfants, la valeur taxable est réduite par rapport à la pleine propriété — ce qui diminue significativement les droits de donation. Au décès de l'usufruitier, les enfants récupèrent la pleine propriété sans fiscalité supplémentaire."
+      - "Le démembrement peut également être utilisé pour acquérir un bien immobilier à coût réduit, structurer une SCI ou optimiser la détention d'un contrat d'assurance-vie. Chaque situation appelle une analyse spécifique et une mise en œuvre rigoureuse."
+    boxTitle: "Bon à savoir"
+    box:
+      - "La valeur de la nue-propriété est calculée selon un barème fiscal lié à l'âge de l'usufruitier"
+      - "Une donation en nue-propriété utilise les abattements fiscaux (100 000€ par parent et par enfant, renouvelables tous les 15 ans)"
+      - "Le démembrement d'un bien immobilier locatif permet à l'usufruitier de percevoir les loyers tout en réduisant la base IFI"
+      - "La mise en œuvre nécessite l'intervention d'un notaire — Financiale coordonne l'ensemble du processus"
+    disclaimer: true
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit juridique et fiscal", text: "Analyse complète de votre situation — mode de détention actuel, fiscalité, structure juridique, régime matrimonial, objectifs de transmission. Un état des lieux exhaustif avant toute recommandation." }
+      - { label: "2ème étape", title: "Stratégie sur-mesure", text: "Construction d'un plan d'optimisation cohérent avec vos objectifs patrimoniaux, coordonné avec vos conseils habituels — notaire, avocat fiscaliste, expert-comptable. Chaque recommandation est documentée et argumentée." }
+      - { label: "3ème étape", title: "Mise en œuvre & coordination", text: "Nous prenons en charge la coordination entre tous les intervenants juridiques et fiscaux pour que chaque décision soit mise en œuvre dans les meilleures conditions — rapidement et sans friction." }
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: related
+    eyebrow: "Expertises liées"
+    title: "Une vision globale"
+    link: { label: "Toutes nos expertises", href: /nos-expertises }
+    items:
+      - { title: "Investissements immobiliers", text: "Structuration, financement, optimisation fiscale — construire et développer un patrimoine immobilier performant.", image: /images/Fj7eU5lyfeLews9ZPDGlWVtKHk.jpg, href: /investissements-immobiliers }
+      - { title: "Family Office", text: "Pour les dirigeants dont le patrimoine dépasse le cadre de l'entreprise et nécessite une coordination globale.", image: /images/yN1OYgVx5PUP9Dtg1IDatab1NuU.jpg, href: /family-office }
+      - { title: "Accompagnement du dirigeant", text: "Holding, cession, transmission d'entreprise — les enjeux juridiques et fiscaux spécifiques aux chefs d'entreprise.", image: /images/R1z8F1VOfbVRQu1HHWUpXcdAPi0.jpg, href: /accompagnement-dirigeant }
+
+  - type: cta
+    title: "Votre situation fiscale mérite une analyse approfondie."
+    text: "Un expert juridique et fiscal prend contact avec vous sous 48h pour un premier échange confidentiel et sans engagement."
+    image: /images/UgyDNpcnPgePJ0zk2J7ZUjHI.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

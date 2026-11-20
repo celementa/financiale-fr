@@ -1,0 +1,27 @@
+---
+/** Grille de 4 atouts sur fond blanc (ex. assurance-vie luxembourgeoise). */
+const { eyebrow, title, text, items = [] } = Astro.props;
+---
+<section class="section section--white features">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="section-head">
+      <h2 class="features__title">{title}</h2>
+      {text && <p>{text}</p>}
+    </div>
+    <ul class="features__grid">
+      {items.map((it: any) => (
+        <li class="reveal"><h3 class="h4">{it.title}</h3><p>{it.text}</p></li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .features__title { max-width: 16em; }
+  .features__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .features__grid li { background: var(--paper); padding: clamp(1.5rem, 3vw, 2.5rem); color: var(--navy); }
+  .features__grid h3 { margin-bottom: 1rem; }
+  .features__grid p { font-size: var(--fs-small); }
+  @media (max-width: 760px) { .features__grid { grid-template-columns: 1fr; } }
+</style>

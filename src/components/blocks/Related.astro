@@ -1,0 +1,37 @@
+---
+/** « Expertises liées » : 3 cartes image cliquables. */
+import Img from '../Img.astro';
+import LinkArrow from '../LinkArrow.astro';
+const { eyebrow, title, link, items = [] } = Astro.props;
+---
+<section class="section section--paper related">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <div class="section-head section-head--split">
+      <h2>{title}</h2>
+      {link && <LinkArrow href={link.href} label={link.label} />}
+    </div>
+    <ul class="related__grid">
+      {items.map((it: any) => (
+        <li class="reveal">
+          <a href={it.href} class="related__card">
+            <div class="media media--card"><Img src={it.image} alt="" sizes="(max-width: 760px) 90vw, 400px" /></div>
+            <div class="related__body"><h3 class="h4">{it.title}</h3><p>{it.text}</p></div>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
+
+<style>
+  .related__grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .related__card { position: relative; display: block; overflow: hidden; color: var(--paper); }
+  .related__card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(8,8,8,0) 40%, rgba(8,8,8,.75) 100%); }
+  .related__card .media :global(img) { transition: transform 1s ease; }
+  .related__card:hover .media :global(img) { transform: scale(1.04); }
+  .related__body { position: absolute; left: 1.25rem; right: 1.25rem; bottom: 1.25rem; z-index: 1; }
+  .related__body h3 { margin-bottom: .5rem; }
+  .related__body p { font-size: .875rem; line-height: 1.45; max-width: 20rem; }
+  @media (max-width: 760px) { .related__grid { grid-template-columns: 1fr; } }
+</style>

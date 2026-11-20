@@ -1,0 +1,105 @@
+slug: family-office
+seo:
+  title: "Financiale Family Office — Gestion globale du patrimoine familial"
+  description: "Financiale Family Office accompagne les familles et les dirigeants dans la gestion globale, la structuration et la transmission de leurs actifs."
+  image: /images/yfxhyJyzb5PtOZ3qqeVCCBuhgfk.jpg
+blocks:
+  - type: hero
+    image: /images/yfxhyJyzb5PtOZ3qqeVCCBuhgfk.jpg
+    title: "Votre patrimoine familial,\ncoordonné dans sa globalité."
+    text: "Financiale Family Office accompagne les familles et les dirigeants dans la gestion globale, la structuration et la transmission de leurs actifs — avec la rigueur d'une banque privée et l'indépendance d'un cabinet conseil."
+    cta: { label: "Demander un diagnostic", href: /contact }
+
+  - type: stats
+    items:
+      - { value: "450M+", label: "D'encours gérés" }
+      - { value: "500+", label: "Familles accompagnées" }
+      - { value: "20+", label: "D'années d'expertise" }
+      - { value: "1", label: "Interlocuteur" }
+
+  - type: context
+    eyebrow: "Le problème"
+    title: "Un patrimoine important est une responsabilité. Pas une contrainte."
+    paragraphs:
+      - "Au-delà d'un certain niveau de patrimoine, la gestion des actifs devient complexe, chronophage et multi-dimensionnelle. Actifs financiers, immobilier, holdings, assurances, fiscalité, transmission, relations avec notaires et avocats — chaque décision engage l'ensemble."
+      - "La plupart des interlocuteurs ne voient qu'une partie du tableau. Financiale Family Office coordonne l'ensemble — avec une vision globale, une totale indépendance et un seul objectif : protéger et faire fructifier ce que vous avez construit, pour vous et pour les générations qui suivent."
+    image: /images/kTTRHrnjEdySANXGadwJOcxsvY0.jpg
+
+  - type: carousel
+    tone: dark
+    eyebrow: "Nos expertises"
+    title: "Ce que nous coordonnons pour vous."
+    text: "Une prise en charge globale de votre patrimoine, dans toutes ses dimensions."
+    items:
+      - title: "Assistance fiscale & juridique"
+        text: "Optimisation fiscale, ingénierie juridique, structuration de holdings — nos experts coordonnent les aspects légaux et fiscaux de chaque décision patrimoniale significative."
+        image: /images/UqDUeIjBKDRV5fvFsFtdRkY76w.jpg
+      - title: "Transmission & succession"
+        text: "Donation, démembrement, pacte Dutreil, gouvernance familiale — nous préparons la transmission de votre patrimoine dans les meilleures conditions fiscales et humaines."
+        image: /images/qTAb4OvW8gjSZHKC0ZBIH8ia4xA.jpg
+      - title: "Philanthropie"
+        text: "Fondations, fonds de dotation, mécénat — nous accompagnons les familles qui souhaitent donner un sens supplémentaire à leur patrimoine."
+        image: /images/IP46AzRY8WdjOrHTZlj4E0laS8.jpg
+      - title: "Intermédiation & coordination"
+        text: "Interface avec vos avocats, notaires, experts-comptables et agents immobiliers — nous devenons le chef d'orchestre de votre écosystème de conseils."
+        image: /images/ze2YK3t6LMZQLruur2tULKzdZU.jpg
+      - title: "Structuration patrimoniale"
+        text: "Organisation et optimisation de l'ensemble de vos actifs — financiers, immobiliers, professionnels — dans une architecture cohérente et fiscalement efficiente."
+        image: /images/Z6O0sZVQjXOmlUjxRftuKpN9DaE.jpg
+      - title: "Préservation & sécurisation"
+        text: "Protection du capital familial, couverture des risques, prévoyance — nous anticipons les aléas pour que votre patrimoine reste intact face aux imprévus."
+        image: /images/J3pPB6HWOjabRg1Qaq5DG8KxJiM.jpg
+      - title: "Développement & investissement"
+        text: "Sélection des meilleures opportunités d'investissement financières et immobilières, adaptées à vos objectifs de rendement et à votre profil de risque."
+        image: /images/YokVoiOK3LMY1DP39hamPMnAX2A.jpg
+      - title: "Pilotage & reporting"
+        text: "Suivi régulier de vos actifs, reporting mensuel consolidé, tableaux de bord personnalisés — une vision claire et instantanée de l'état de votre patrimoine."
+        image: /images/vrfwpYJavCDCevijLlNJQfz6bw.jpg
+
+  - type: features
+    eyebrow: "L'assurance-vie luxembourgeoise"
+    title: "Un outil d'exception pour les patrimoines internationaux."
+    text: "L'assurance-vie luxembourgeoise est l'un des véhicules les plus puissants pour les familles à forte mobilité internationale ou à patrimoine complexe."
+    items:
+      - { title: "Fiscalité neutre", text: "Contrat souscrit dans un pays fiscalement neutre — particulièrement avantageux en cas d'expatriation ou de multi-résidence fiscale." }
+      - { title: "Triangle de sécurité", text: "Protection renforcée des souscripteurs par la réglementation luxembourgeoise — vos actifs sont ségrégués et protégés même en cas de défaillance de l'assureur." }
+      - { title: "Flexibilité d'investissement", text: "Accès à une gamme élargie de supports — fonds internes dédiés (FID), fonds internes collectifs (FIC), actifs non cotés — impossible en assurance-vie française classique." }
+      - { title: "Portabilité internationale", text: "Le contrat suit le souscripteur dans ses déplacements et s'adapte à sa résidence fiscale — un avantage décisif pour les familles en mobilité." }
+
+  - type: process
+    tone: dark
+    eyebrow: "Notre méthode"
+    title: "Une approche structurée, de l'audit à la coordination dans la durée."
+    image: /images/t6XXePITS3KiUdIGDxKcDtDZPIY.jpg
+    cta: { label: "Demander un diagnostic", href: /contact }
+    steps:
+      - { label: "1ère étape", title: "Audit patrimonial complet", text: "Recensement complet de vos actifs, passifs, flux, engagements fiscaux, structure juridique et objectifs familiaux. Une cartographie exhaustive avant toute recommandation." }
+      - { label: "2ème étape", title: "Stratégie personnalisée", text: "Construction d'une architecture patrimoniale cohérente avec vos projets de vie — transmission, préservation, développement, gouvernance familiale. Documentée, argumentée, validée avec vous." }
+      - { label: "3ème étape", title: "Mise en œuvre", text: "Activation de notre réseau d'experts partenaires, coordination avec vos conseils habituels, mise en place des solutions retenues. Vous n'avez qu'un seul interlocuteur." }
+      - { label: "4ème étape", title: "Suivi continu", text: "Tableau de bord patrimonial consolidé, reporting mensuel institutionnel, points réguliers avec votre conseiller dédié. Votre patrimoine est suivi avec la rigueur d'un family office institutionnel." }
+
+  - type: comparison
+    eyebrow: "Notre différence"
+    title: "Pourquoi choisir Financiale Family Office"
+    criteria: ["Indépendance", "Rémunération", "Sélection des solutions", "Interlocuteur", "Coordination"]
+    columns:
+      - title: "Banque privée classique"
+        values: ["Contraintes de distribution interne", "Commissions partiellement visibles", "Gamme interne prioritaire", "Rotation fréquente des conseillers", "Limité aux produits bancaires"]
+      - title: "Financiale Family Office"
+        highlight: true
+        values: ["Aucun lien capitalistique", "Honoraires transparents définis en amont", "Ensemble du marché", "Conseiller dédié, continuité garantie", "Chef d'orchestre de tous vos conseils"]
+
+  - type: team
+    eyebrow: "Notre équipe"
+    title: "Votre patrimoine entre les mains d'experts confirmés."
+    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
+    roles:
+      vincent-mallet: "Associé fondateur"
+      carole-mallet: "Associée"
+    link: { label: "Découvrir toute l'équipe", href: /financiale }
+
+  - type: cta
+    title: "Votre patrimoine mérite une attention sans compromis."
+    text: "Un expert Family Office prend contact avec vous sous 48h pour un premier échange confidentiel, sans engagement."
+    image: /images/lgjNODX5M7AxkW2yb8FUskI8g.jpg
+    cta: { label: "Demander mon diagnostic", href: /contact }

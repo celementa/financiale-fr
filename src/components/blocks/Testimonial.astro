@@ -1,0 +1,24 @@
+---
+import Img from '../Img.astro';
+const { eyebrow, title, image, quote, author } = Astro.props;
+---
+<section class="section section--paper testimonial">
+  <div class="container">
+    <div class="divider"><p class="eyebrow">{eyebrow}</p></div>
+    <h2>{title}</h2>
+    <figure class="testimonial__grid reveal">
+      <div class="media testimonial__media"><Img src={image} alt="" sizes="(max-width: 760px) 90vw, 500px" /></div>
+      <div>
+        <blockquote class="h4">{quote}</blockquote>
+        <figcaption class="lead">{author}</figcaption>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<style>
+  .testimonial__grid { display: grid; grid-template-columns: 500px 1fr; gap: clamp(2rem, 6vw, 5rem); align-items: center; margin: clamp(2.5rem, 5vw, 4rem) 0 0; }
+  .testimonial__media { aspect-ratio: 500 / 509; }
+  .testimonial blockquote { margin: 0 0 2rem; font-weight: 400; font-size: clamp(1.3rem, 1.1rem + .6vw, 1.6rem); line-height: 1.4; }
+  @media (max-width: 900px) { .testimonial__grid { grid-template-columns: 1fr; } .testimonial__media { max-width: 420px; } }
+</style>
