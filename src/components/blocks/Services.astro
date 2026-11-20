@@ -1,4 +1,5 @@
 ---
+import { url } from '../../lib/url';
 /** Liste d'expertises en lignes (vignette, titre, texte, flèche).
  *  tone: "dark" (fond bleu, défaut) | "light" */
 import Img from '../Img.astro';
@@ -20,7 +21,7 @@ const { eyebrow, title, text, cta, items = [], tone = 'dark', asideImage } = Ast
     <ul class="services__list">
       {items.map((it: any) => (
         <li class="reveal">
-          <a href={it.href} class="row">
+          <a href={url(it.href)} class="row">
             <div class="media row__thumb"><Img src={it.image} alt="" sizes="180px" widths={[180, 360]} /></div>
             <div>
               <h3 class="row__title">{it.title}</h3>

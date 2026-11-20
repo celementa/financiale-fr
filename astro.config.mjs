@@ -4,7 +4,9 @@ import { defineConfig } from 'astro/config';
 // Site 100 % statique : aucun service tiers n'est appelé au chargement d'une page
 // (polices, images et scripts sont servis depuis le serveur UE de Financiale).
 export default defineConfig({
-  site: 'https://www.financiale.fr',
+  site: process.env.SITE_URL ?? 'https://www.financiale.fr',
+  // Chemin de base : "/" en production ; "/financiale-fr" pour la préversion GitHub Pages
+  base: process.env.BASE_PATH ?? '/',
   trailingSlash: 'never',
   build: {
     // /sport -> dist/sport.html (nginx : try_files $uri $uri.html)

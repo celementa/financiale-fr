@@ -1,4 +1,5 @@
 ---
+import { url } from '../../lib/url';
 /** « Expertises liées » : 3 cartes image cliquables. */
 import Img from '../Img.astro';
 import LinkArrow from '../LinkArrow.astro';
@@ -14,7 +15,7 @@ const { eyebrow, title, link, items = [] } = Astro.props;
     <ul class="related__grid">
       {items.map((it: any) => (
         <li class="reveal">
-          <a href={it.href} class="related__card">
+          <a href={url(it.href)} class="related__card">
             <div class="media media--card"><Img src={it.image} alt="" sizes="(max-width: 760px) 90vw, 400px" /></div>
             <div class="related__body"><h3 class="h4">{it.title}</h3><p>{it.text}</p></div>
           </a>

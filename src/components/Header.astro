@@ -1,25 +1,26 @@
 ---
+import { url, stripBase } from '../lib/url';
 import { site } from '../lib/data';
 import Img from './Img.astro';
-const path = Astro.url.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
+const path = stripBase(Astro.url.pathname).replace(/\.html$/, '').replace(/\/$/, '') || '/';
 const isActive = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
 ---
 <header class="site-header" data-header>
   <div class="container site-header__inner">
-    <a href="/" class="site-header__logo" aria-label="Financiale — accueil">
+    <a href={url('/')} class="site-header__logo" aria-label="Financiale — accueil">
       <Img src={site.logo} alt="Financiale" eager />
     </a>
 
     <nav class="site-nav" aria-label="Navigation principale" id="site-nav">
       <ul>
         {site.nav.map((l: any) => (
-          <li><a href={l.href} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a></li>
+          <li><a href={url(l.href)} aria-current={isActive(l.href) ? 'page' : undefined}>{l.label}</a></li>
         ))}
       </ul>
-      <a href={site.navCta.href} class="site-header__cta site-header__cta--mobile">{site.navCta.label}</a>
+      <a href={url(site.navCta.href)} class="site-header__cta site-header__cta--mobile">{site.navCta.label}</a>
     </nav>
 
-    <a href={site.navCta.href} class="site-header__cta">{site.navCta.label}</a>
+    <a href={url(site.navCta.href)} class="site-header__cta">{site.navCta.label}</a>
 
     <button class="site-header__toggle" aria-controls="site-nav" aria-expanded="false" data-nav-toggle>
       <span class="sr-only">Menu</span><span></span><span></span>

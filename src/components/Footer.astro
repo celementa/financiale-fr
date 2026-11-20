@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url';
 import { site } from '../lib/data';
 import Img from './Img.astro';
 const f = site.footer;
@@ -18,7 +19,7 @@ const year = new Date().getFullYear();
         {f.columns.map((col: any) => (
           <div>
             <p class="site-footer__title">{col.title}</p>
-            <ul>{col.links.map((l: any) => <li><a href={l.href}>{l.label}</a></li>)}</ul>
+            <ul>{col.links.map((l: any) => <li><a href={url(l.href)}>{l.label}</a></li>)}</ul>
           </div>
         ))}
       </nav>
@@ -39,7 +40,7 @@ const year = new Date().getFullYear();
     <div class="site-footer__brand">
       <div>
         <!-- Logo volontairement petit et aligné à gauche -->
-        <a href="/" class="site-footer__logo" aria-label="Financiale — accueil">
+        <a href={url('/')} class="site-footer__logo" aria-label="Financiale — accueil">
           <Img src={site.logoLight} alt="Financiale Gestion Privée" sizes="140px" widths={[140, 280]} />
         </a>
         <address>

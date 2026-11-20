@@ -1,0 +1,53 @@
+# Préversion temporaire sur GitHub Pages : https://celementa.github.io/financiale-fr/
+# Non indexée par Google (noindex + robots.txt). Le site définitif sera hébergé sur le serveur UE
+# (voir .forgejo/workflows/deploy.yml) : supprimer ce fichier lors de la migration.
+name: preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Garde en cache les images déjà optimisées : les compilations suivantes sont rapides
+      - uses: actions/cache@v4
+        with:
+          path: node_modules/.astro
+          key: astro-images-${{ hashFiles('src/assets/images/**') }}
+          restore-keys: astro-images-
+      - run: npm run build
+        env:
+          PREVIEW: '1'
+          SITE_URL: https://celementa.github.io
+          BASE_PATH: /financiale-fr
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

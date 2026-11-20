@@ -2,7 +2,7 @@
 /**
  * Image optimisée. Le contenu référence les images par chemin « /images/<fichier> » ;
  * le fichier source est dans src/assets/images/. À la compilation, Astro/sharp génère
- * des variantes AVIF + WebP redimensionnées (srcset) : aucune image d'origine n'est servie.
+ * des variantes WebP redimensionnées (srcset, + JPEG/PNG de secours) : aucune image d'origine n'est servie.
  *
  * Props :
  *  - src     : "/images/xxx.jpg"
@@ -41,7 +41,7 @@ if (!mod && import.meta.env.PROD && process.env.STRICT_ASSETS === '1') {
 }
 
 const isSvg = name.endsWith('.svg');
-const w = widths ?? (sizes === '100vw' ? [640, 960, 1280, 1600, 1920, 2400] : [320, 480, 640, 960, 1280]);
+const w = widths ?? (sizes === '100vw' ? [640, 1280, 1920, 2400] : [400, 800, 1200]);
 ---
 {mod ? (
   isSvg ? (
@@ -51,7 +51,7 @@ const w = widths ?? (sizes === '100vw' ? [640, 960, 1280, 1600, 1920, 2400] : [3
     <Picture
       src={mod.default}
       alt={alt}
-      formats={['avif', 'webp']}
+      formats={['webp']}
       fallbackFormat={name.endsWith('.png') ? 'png' : 'jpg'}
       widths={w.filter((x) => x <= mod.default.width).concat(w.some((x) => x <= mod.default.width) ? [] : [mod.default.width])}
       sizes={sizes}

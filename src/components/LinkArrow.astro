@@ -1,6 +1,7 @@
 ---
+import { url } from '../lib/url';
 import Arrow from './Arrow.astro';
 interface Props { href: string; label: string; class?: string }
 const { href, label, class: cls } = Astro.props;
 ---
-<a href={href} class:list={['link-arrow', cls]}><span>{label}</span><Arrow /></a>
+<a href={url(href)} class:list={['link-arrow', cls]}><span>{label}</span><Arrow /></a>

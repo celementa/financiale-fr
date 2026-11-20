@@ -17,7 +17,7 @@ async function* walk(dir) {
   for (const e of await readdir(dir, { withFileTypes: true })) {
     const p = join(dir, e.name);
     if (e.isDirectory()) { if (e.name !== 'assets') yield* walk(p); }
-    else if (/\.(ya?ml|md|astro)$/.test(e.name)) yield p;
+    else if (/\.(ya?ml|md)$/.test(e.name)) yield p;
   }
 }
 
