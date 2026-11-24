@@ -1,0 +1,55 @@
+# Mise en ligne sur l'hébergement de Financiale (FTP), à chaque fusion sur « main ».
+#
+# Secrets à créer dans GitHub : Settings > Secrets and variables > Actions > New repository secret
+#   FTP_SERVER     adresse du serveur FTP (ex. 37.59.206.174)
+#   FTP_USERNAME   identifiant FTP
+#   FTP_PASSWORD   mot de passe FTP
+# Variable (onglet « Variables ») :
+#   SITE_URL       adresse du site, ex. https://www.financiale-corporate.fr (test) puis https://www.financiale.fr
+#
+# Tant que le site est en test, PREVIEW=1 empêche Google de l'indexer. À la mise en ligne
+# définitive sur financiale.fr, passer PREVIEW à '0' ci-dessous.
+
+name: deploy-ftp
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-ftp
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      # Garde en cache les images déjà optimisées : les compilations suivantes sont rapides
+      - uses: actions/cache@v4
+        with:
+          path: node_modules/.astro
+          key: astro-images-${{ hashFiles('src/assets/images/**') }}
+          restore-keys: astro-images-
+      - run: npm run build
+        env:
+          STRICT_ASSETS: '1'
+          PREVIEW: '1'
+          SITE_URL: ${{ vars.SITE_URL }}
+      - name: Envoi FTP (uniquement les fichiers modifiés)
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps          # FTP chiffré (TLS). Si l'hébergeur ne le permet pas : ftp
+          port: 21
+          local-dir: ./dist/
+          server-dir: ./www/

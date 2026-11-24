@@ -99,6 +99,17 @@ After that, every merge to `main` deploys automatically (`.forgejo/workflows/dep
 
 **Rollback:** revert the commit in Forgejo. The pipeline redeploys the previous version.
 
+## Shared hosting (FTP) — current test setup
+
+The client's hosting at **www.financiale-corporate.fr** is a classic Apache/PHP shared host with FTP access, so the Docker/Caddy setup isn't used there. The site works the same way:
+
+- **No database.** The site is static HTML, so MySQL is not needed.
+- `public/.htaccess` does what `deploy/Caddyfile` does: HTTPS + www, clean URLs (`/contact` serves `contact.html`), the 301 redirects from the old site, security headers (CSP, HSTS…), caching and the 404 page. It needs `mod_rewrite` and `mod_headers` (standard).
+- `public/api/contact.php` replaces `form-handler/`: the contact form posts to `/api/contact`, the PHP script validates it and sends the e-mail with the host's `mail()` function. Needs **PHP 8.1+**. Edit `MAIL_TO` / `MAIL_FROM` at the top of the file if needed (`MAIL_FROM` must be an address on the hosted domain).
+- **Automatic deploy:** `.github/workflows/deploy-ftp.yml` builds the site and uploads `dist/` to the `www/` folder over FTPS on every push to `main`. Add the secrets `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD` and the variable `SITE_URL` in the GitHub repository settings. Never commit FTP credentials to the repo.
+- **Manual deploy:** `SITE_URL=https://www.financiale-corporate.fr PREVIEW=1 npm run build`, then upload the *contents* of `dist/` into `www/` with an FTP client (FileZilla). Make sure the hidden `.htaccess` file is uploaded too.
+- While on the test domain, `PREVIEW=1` keeps the site out of Google (noindex + `robots.txt`). Set it to `0` when the site goes live on financiale.fr.
+
 ## SEO notes for the switch-over
 
 - `deploy/redirects.caddy` sends every URL of the **current** financiale.fr (Flow CMS, `.html` pages) to its new equivalent with a 301, so existing rankings carry over. Keep these redirects for at least 12 months.

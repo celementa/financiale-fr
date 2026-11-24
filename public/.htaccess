@@ -1,0 +1,112 @@
+# =============================================================================
+# Financiale — configuration Apache (hébergement mutualisé / FTP)
+# Équivalent de deploy/Caddyfile + deploy/redirects.caddy pour un serveur Apache.
+# Modules requis : mod_rewrite, mod_headers, mod_expires, mod_deflate (standards).
+# =============================================================================
+
+Options -Indexes -MultiViews
+DirectorySlash Off
+DirectoryIndex index.html
+ErrorDocument 404 /404.html
+AddDefaultCharset utf-8
+AddType image/webp .webp
+AddType image/avif .avif
+AddType image/svg+xml .svg
+AddType application/manifest+json .webmanifest
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+
+# Ne pas retraiter une URL déjà réécrite en interne (/contact -> contact.html)
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+
+# --- HTTPS + www -------------------------------------------------------------
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule ^ https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# --- Anciennes URL du site financiale.fr (CMS Flow) -> nouvelles pages ------
+RewriteRule ^index\.html$ / [R=301,L]
+RewriteRule ^financiale\.html$ /financiale [R=301,L]
+RewriteRule ^contact\.html$ /contact [R=301,L]
+RewriteRule ^mentions-legales\.html$ /mentions-legales [R=301,L]
+RewriteRule ^myfinanciale\.html$ /contact [R=301,L]
+RewriteRule ^chef-d-entreprise\.html$ /accompagnement-dirigeant [R=301,L]
+RewriteRule ^profession_liberale\.html$ /nos-expertises [R=301,L]
+RewriteRule ^salarie\.html$ /nos-expertises [R=301,L]
+RewriteRule ^retraite\.html$ /preparer-votre-retraite [R=301,L]
+RewriteRule ^catalogue/vos-besoins\.html$ /nos-expertises [R=301,L]
+RewriteRule ^catalogue/vos-besoins/anticiper-votre-transmission\.html$ /aide-juridique-fiscale [R=301,L]
+RewriteRule ^catalogue/vos-besoins/comment-generer-des-revenus-complementaires\.html$ /preparer-votre-retraite [R=301,L]
+RewriteRule ^catalogue/vos-besoins/comment-optimiser-sa-fiscalite\.html$ /aide-juridique-fiscale [R=301,L]
+RewriteRule ^catalogue/vos-besoins/proteger-vos-proches\.html$ /courtage-assurance [R=301,L]
+RewriteRule ^catalogue/nos-expertises\.html$ /nos-expertises [R=301,L]
+RewriteRule ^catalogue/nos-expertises/accompagnement-du-dirigeant-dentreprise\.html$ /accompagnement-dirigeant [R=301,L]
+RewriteRule ^catalogue/nos-expertises/aide-juridique-et-fiscale\.html$ /aide-juridique-fiscale [R=301,L]
+RewriteRule ^catalogue/nos-expertises/athlete-office\.html$ /sport [R=301,L]
+RewriteRule ^catalogue/nos-expertises/courtage-dassurance\.html$ /courtage-assurance [R=301,L]
+RewriteRule ^catalogue/nos-expertises/strategie-et-ingenierie-patrimoniale\.html$ /methodologie-approche-patrimoniale [R=301,L]
+RewriteRule ^catalogue/nos-expertises/investissements-immobiliers1\.html$ /investissements-immobiliers [R=301,L]
+RewriteRule ^catalogue/nos-expertises/family-office1\.html$ /family-office [R=301,L]
+RewriteRule ^catalogue/nos-expertises/preparer-votre-retraite\.html$ /preparer-votre-retraite [R=301,L]
+RewriteRule ^catalogue/nos-expertises/gestion-financiere1\.html$ /gestion-financiere [R=301,L]
+
+# --- Anciennes URL accentuées de la préversion Framer -----------------------
+RewriteRule ^mentions-l(%C3%A9|é)gales$ /mentions-legales [R=301,L,NE]
+RewriteRule ^blog/expatriation-ce-que-votre-banquier-fran(%C3%A7|ç)ais-ne-vous-dit-pas-sur-votre-assurance-vie$ /blog/expatriation-ce-que-votre-banquier-francais-ne-vous-dit-pas-sur-votre-assurance-vie [R=301,L,NE]
+RewriteRule ^blog/ifi-2024-trois-strat.+gies-l.+gales-pour-r.+duire-votre-imp.+t-sur-la-fortune-immobili.+re$ /blog/ifi-2024-trois-strategies-legales-pour-reduire-votre-impot-sur-la-fortune-immobiliere [R=301,L,NE]
+
+# --- URL propres --------------------------------------------------------------
+# /page.html demandé explicitement -> /page (sauf 404.html)
+RewriteCond %{THE_REQUEST} \s/+([^?\s]+?)\.html[\s?] [NC]
+RewriteCond %1 !^404$
+RewriteRule ^ /%1 [R=301,L,NE]
+
+# Barre oblique finale -> sans (hors racine)
+RewriteCond %{REQUEST_URI} ^/(.+)/$
+RewriteRule ^ /%1 [R=301,L]
+
+# Formulaire de contact
+RewriteRule ^api/contact$ api/contact.php [L]
+
+# /page -> page.html (servi sans redirection)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)$ $1.html [L]
+</IfModule>
+
+# --- En-têtes de sécurité ----------------------------------------------------
+<IfModule mod_headers.c>
+Header always set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "DENY"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+Header always set Cross-Origin-Opener-Policy "same-origin"
+# Tout est servi depuis ce serveur : aucune ressource tierce autorisée.
+Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+Header unset X-Powered-By
+
+# Fichiers versionnés (empreinte dans le nom) : cache 1 an
+<If "%{REQUEST_URI} =~ m#^/_astro/#">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</If>
+<If "%{REQUEST_URI} !~ m#^/_astro/#">
+Header set Cache-Control "public, max-age=300, must-revalidate"
+</If>
+</IfModule>
+
+<IfModule mod_deflate.c>
+AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml
+</IfModule>
+
+# Ne jamais servir de fichiers cachés (.git, .env…)
+<FilesMatch "^\.">
+Require all denied
+</FilesMatch>
