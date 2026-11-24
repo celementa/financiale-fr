@@ -45,6 +45,7 @@ const year = new Date().getFullYear();
         </a>
         <address>
           {site.address.street} – {site.address.postalCode} {site.address.city}<br />
+          {(site.otherAddresses ?? []).map((a: string) => <Fragment>{a}<br /></Fragment>)}
           <a href={`tel:${site.phoneIntl}`}>{site.phone}</a> · <a href={`mailto:${site.email}`}>{site.email}</a>
         </address>
       </div>

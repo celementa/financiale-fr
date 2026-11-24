@@ -11,6 +11,9 @@ address:
   city: "Paris"
   country: "FR"
 mapsUrl: "https://maps.app.goo.gl/LeUAmMKD2JFrY1mZA"
+# Autres bureaux (affichés dans le pied de page sous le siège)
+otherAddresses:
+  - "17, avenue de l'Opéra – 75001 Paris"
 
 logo: /images/4187RpK6xsO25wmMxQB8SdBI98.svg        # logo sombre (en-tête)
 logoLight: /images/yQzyQAPElR1Jrq9WO9c8kpGSM.png    # logo clair (pied de page)
