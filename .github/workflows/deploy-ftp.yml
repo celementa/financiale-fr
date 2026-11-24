@@ -5,7 +5,7 @@
 #   FTP_USERNAME   identifiant FTP
 #   FTP_PASSWORD   mot de passe FTP
 # Variable (onglet « Variables ») :
-#   SITE_URL       adresse du site, ex. https://www.financiale-corporate.fr (test) puis https://www.financiale.fr
+#   SITE_URL       adresse du site (facultatif) : https://www.financiale-corporate.fr par défaut, puis https://www.financiale.fr
 #
 # Tant que le site est en test, PREVIEW=1 empêche Google de l'indexer. À la mise en ligne
 # définitive sur financiale.fr, passer PREVIEW à '0' ci-dessous.
@@ -42,14 +42,19 @@ jobs:
         env:
           STRICT_ASSETS: '1'
           PREVIEW: '1'
-          SITE_URL: ${{ vars.SITE_URL }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://www.financiale-corporate.fr' }}
       - name: Envoi FTP (uniquement les fichiers modifiés)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps          # FTP chiffré (TLS). Si l'hébergeur ne le permet pas : ftp
+          protocol: ftps          # FTP chiffré (TLS explicite), comme dans FileZilla
           port: 21
+          security: loose         # le certificat du serveur mutualisé ne porte pas le nom de l'IP
           local-dir: ./dist/
-          server-dir: ./www/
+          server-dir: ./          # la racine FTP est la racine du site
+          exclude: |
+            **/.DS_Store
+            **/.git*
+            **/.git*/**

@@ -2,17 +2,25 @@
 import Base from '../layouts/Base.astro';
 import { Content, frontmatter } from '../data/mentions-legales.md';
 ---
-<Base title="Mentions légales — Financiale" description="Mentions légales, traitement des réclamations et protection des données personnelles de Financiale Gestion Privée.">
+<Base title="Mentions légales — Financiale" description="Mentions légales, statuts réglementaires, traitement des réclamations et protection des données personnelles de Financiale Gestion Privée.">
   <section class="section section--paper">
     <div class="container">
-      <h1 class="h2">Mentions légales</h1>
+      <h1 class="h2 legal__title">{frontmatter.title}</h1>
       <p class="eyebrow legal__date">Mise à jour le {frontmatter.updated}</p>
       <div class="prose legal"><Content /></div>
     </div>
   </section>
 </Base>
 <style>
+  .legal__title { max-width: 18em; }
   .legal__date { color: rgba(8,8,8,.6); margin-top: 1.5rem; }
   .legal { max-width: 52rem; font-size: 1rem; }
   .legal :global(h2) { font-size: var(--fs-h4); margin-top: 3rem; }
+  .legal :global(h3) { font-size: 1.35rem; margin-top: 2rem; }
+  .legal :global(table) { width: 100%; border-collapse: collapse; font-size: .9375rem; margin: 1rem 0 1.5rem; display: block; overflow-x: auto; }
+  .legal :global(th), .legal :global(td) { text-align: left; vertical-align: top; padding: .7rem .8rem; border-bottom: 1px solid var(--line-dark); }
+  .legal :global(th) { font-weight: 600; background: var(--white); }
+  /* Points en attente de validation client (à retirer avant mise en ligne) */
+  .legal :global(mark.a-valider) { background: #fff1a8; color: inherit; padding: .05em .2em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  .legal :global(.a-valider-note) { background: #fff8d1; border-left: 4px solid #e0b400; padding: .9rem 1.1rem; margin-bottom: 2rem; font-size: .9375rem; }
 </style>

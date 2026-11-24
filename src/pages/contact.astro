@@ -62,7 +62,9 @@ const c = load<any>('contact.yaml');
         <h2 class="h4">{c.officeTitle}</h2>
         <ul class="contact__info">
           <li><a href={`tel:${site.phoneIntl}`}><span class="h5">Appel</span><span>{site.phone}</span></a></li>
-          <li><a href={site.mapsUrl} rel="noopener" target="_blank"><span class="h5">Notre bureau</span><span>{site.address.street} {site.address.postalCode} {site.address.city}</span></a></li>
+          {c.offices.map((o: any) => (
+            <li><a href={o.mapsUrl} rel="noopener" target="_blank"><span class="h5">Bureau {o.label}</span><span>{o.address}</span></a></li>
+          ))}
           <li><a href={`mailto:${site.email}`}><span class="h5">E-mail</span><span>{site.email}</span></a></li>
         </ul>
       </aside>

@@ -80,7 +80,7 @@ blocks:
 
   - type: comparison
     eyebrow: "Notre différence"
-    title: "Pourquoi choisir Financiale Family Office"
+    title: "Pourquoi choisir notre Family Office"
     criteria: ["Indépendance", "Rémunération", "Sélection des solutions", "Interlocuteur", "Coordination"]
     columns:
       - title: "Banque privée classique"
@@ -89,14 +89,6 @@ blocks:
         highlight: true
         values: ["Aucun lien capitalistique", "Honoraires transparents définis en amont", "Ensemble du marché", "Conseiller dédié, continuité garantie", "Chef d'orchestre de tous vos conseils"]
 
-  - type: team
-    eyebrow: "Notre équipe"
-    title: "Votre patrimoine entre les mains d'experts confirmés."
-    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier]
-    roles:
-      vincent-mallet: "Associé fondateur"
-      carole-mallet: "Associée"
-    link: { label: "Découvrir toute l'équipe", href: /financiale }
 
   - type: cta
     title: "Votre patrimoine mérite une attention sans compromis."

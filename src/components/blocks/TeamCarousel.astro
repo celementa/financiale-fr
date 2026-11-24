@@ -20,7 +20,7 @@ const list = resolve(members, roles);
         <div class="team-c__photo"><Img src={m.photo} alt={m.name} sizes="260px" widths={[260, 520]} /></div>
         <h3 class="h5">{m.name}</h3>
         <p class="team-c__role">{m.role}</p>
-        <p class="team-c__spec">{m.specialty}</p>
+        {m.specialty && <p class="team-c__spec">{m.specialty}</p>}
       </li>
     ))}
   </ul>

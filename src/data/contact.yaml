@@ -4,7 +4,15 @@ seo:
   description: "Un premier échange confidentiel, sans engagement. Un conseiller senior vous rappelle sous 48h."
 title: "Parlons de votre patrimoine."
 text: "Un premier échange confidentiel, sans engagement. Un conseiller senior vous rappelle sous 48h."
-officeTitle: "Financiale — Paris 8ème"
+officeTitle: "Financiale — Paris"
+# Bureaux affichés sur la page contact (lien « Itinéraire » vers la carte)
+offices:
+  - label: "Paris 8e"
+    address: "62, rue la Boétie 75008 Paris"
+    mapsUrl: "https://maps.app.goo.gl/LeUAmMKD2JFrY1mZA"
+  - label: "Paris 1er"
+    address: "17, avenue de l'Opéra 75001 Paris"
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=17+avenue+de+l%27Op%C3%A9ra+75001+Paris"
 images:
   - /images/QdRL6kHXc42e9QgQMdUc0Ss30w.jpg
   - /images/ZIPpBrIzorsjw2JDzNHug8VJOFI.jpeg

@@ -92,14 +92,6 @@ blocks:
     quote: "« Grâce à Financiale, j'ai pu me concentrer sur ma carrière sportive sereinement. Aujourd'hui toujours présent à mes côtés, Financiale m'accompagne dans le suivi de mes investissements. »"
     author: "Lorik Cana - Ancien footballeur professionnel"
 
-  - type: team
-    eyebrow: "Notre équipe"
-    title: "Une équipe qui connaît votre univers."
-    members: [vincent-mallet, carole-mallet, anne-emmanuelle-bannier, gentian-cani]
-    roles:
-      vincent-mallet: "Associé fondateur"
-      carole-mallet: "Associée"
-    link: { label: "Découvrir toute l'équipe", href: /financiale }
 
   - type: cta
     title: "Votre prochaine décision financière aura un impact sur votre après-carrière."

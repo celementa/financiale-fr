@@ -58,6 +58,11 @@ blocks:
   - type: teamCarousel
     title: "L'équipe experte & conseil"
     members:
+      - ludovic-farnault
+      - ophelie-rouet
+      - nathalie-fitoussi
+      - jacques-loisel
+      - constantin-de-la-monneraye
       - domitille-murat
       - joel-villecroze
       - gang-li
