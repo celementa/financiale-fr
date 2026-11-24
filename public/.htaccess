@@ -75,7 +75,7 @@ RewriteRule ^catalogue/nos-expertises/gestion-financiere1\.html$ /gestion-financ
 # --- Anciennes URL accentuées de la préversion Framer -----------------------
 RewriteRule ^mentions-l(%C3%A9|é)gales$ /mentions-legales [R=301,L,NE]
 RewriteRule ^blog/expatriation-ce-que-votre-banquier-fran(%C3%A7|ç)ais-ne-vous-dit-pas-sur-votre-assurance-vie$ /blog/expatriation-ce-que-votre-banquier-francais-ne-vous-dit-pas-sur-votre-assurance-vie [R=301,L,NE]
-RewriteRule ^blog/ifi-2024-trois-strat.+gies-l.+gales-pour-r.+duire-votre-imp.+t-sur-la-fortune-immobili.+re$ /blog/ifi-2024-trois-strategies-legales-pour-reduire-votre-impot-sur-la-fortune-immobiliere [R=301,L,NE]
+RewriteRule ^blog/ifi-2024-trois-strat(%C3%A9|é)gies-l(%C3%A9|é)gales-pour-r(%C3%A9|é)duire-votre-imp(%C3%B4|ô)t-sur-la-fortune-immobili(%C3%A8|è)re$ /blog/ifi-2024-trois-strategies-legales-pour-reduire-votre-impot-sur-la-fortune-immobiliere [R=301,L,NE]
 
 # --- URL propres --------------------------------------------------------------
 # /page.html demandé explicitement -> /page (sauf 404.html)
