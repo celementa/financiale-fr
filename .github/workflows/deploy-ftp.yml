@@ -4,6 +4,9 @@
 #   FTP_SERVER     adresse du serveur FTP (ex. 37.59.206.174)
 #   FTP_USERNAME   identifiant FTP
 #   FTP_PASSWORD   mot de passe FTP
+#   SMTP_HOST, SMTP_PORT, SMTP_SECURE, SMTP_USER, SMTP_PASS, SMTP_FROM, SMTP_TO
+#                  boîte d'envoi du formulaire de contact (voir README). Facultatif : sans SMTP_HOST,
+#                  le formulaire utilise la fonction mail() de l'hébergeur.
 # Variable (onglet « Variables ») :
 #   SITE_URL       adresse du site (facultatif) : https://www.financiale-corporate.fr par défaut, puis https://www.financiale.fr
 #
@@ -24,6 +27,8 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      SMTP_HOST: ${{ secrets.SMTP_HOST }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -43,6 +48,28 @@ jobs:
           STRICT_ASSETS: '1'
           PREVIEW: '1'
           SITE_URL: ${{ vars.SITE_URL || 'https://www.financiale-corporate.fr' }}
+      # Configuration SMTP du formulaire, créée à partir des secrets au moment du déploiement :
+      # elle n'existe jamais dans le dépôt Git.
+      - name: Configuration SMTP du formulaire
+        if: ${{ env.SMTP_HOST != '' }}
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_SECURE: ${{ secrets.SMTP_SECURE }}
+          SMTP_USER: ${{ secrets.SMTP_USER }}
+          SMTP_PASS: ${{ secrets.SMTP_PASS }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SMTP_TO: ${{ secrets.SMTP_TO }}
+        run: |
+          node -e '
+            const e = process.env;
+            const cfg = { host: e.SMTP_HOST, port: Number(e.SMTP_PORT || 587), secure: e.SMTP_SECURE || "tls",
+              user: e.SMTP_USER, pass: e.SMTP_PASS, from: e.SMTP_FROM || e.SMTP_USER, to: e.SMTP_TO || "contact@financiale.fr" };
+            const b64 = Buffer.from(JSON.stringify(cfg)).toString("base64");
+            require("fs").writeFileSync("dist/api/smtp-config.php", `<?php return json_decode(base64_decode("${b64}"), true);\n`);
+          '
+          echo "smtp-config.php créé"
+
       - name: Envoi FTP (uniquement les fichiers modifiés)
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
