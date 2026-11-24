@@ -1,7 +1,22 @@
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_value error_log "/home/saveonli/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+<IfModule lsapi_module>
+   php_value error_log "/home/saveonli/logs/php.error.log"
+   php_flag log_errors On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit
+
 # =============================================================================
 # Financiale — configuration Apache (hébergement mutualisé / FTP)
 # Équivalent de deploy/Caddyfile + deploy/redirects.caddy pour un serveur Apache.
-# Modules requis : mod_rewrite, mod_headers, mod_expires, mod_deflate (standards).
+# Modules requis : mod_rewrite, mod_headers, mod_deflate (standards, Apache ou LiteSpeed).
+# Le bloc cPanel ci-dessus appartient à l'hébergeur : le conserver tel quel.
 # =============================================================================
 
 Options -Indexes -MultiViews
@@ -93,13 +108,14 @@ Header always set Cross-Origin-Opener-Policy "same-origin"
 Header always set Content-Security-Policy "default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; font-src 'self'; connect-src 'self'; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
 Header unset X-Powered-By
 
-# Fichiers versionnés (empreinte dans le nom) : cache 1 an
-<If "%{REQUEST_URI} =~ m#^/_astro/#">
-Header set Cache-Control "public, max-age=31536000, immutable"
-</If>
-<If "%{REQUEST_URI} !~ m#^/_astro/#">
+# Pages HTML : courte durée ; fichiers versionnés de /_astro (empreinte dans le nom) : 1 an
+# (FilesMatch plutôt que <If> : compatible Apache et LiteSpeed)
+<FilesMatch "\.(html|xml|txt)$">
 Header set Cache-Control "public, max-age=300, must-revalidate"
-</If>
+</FilesMatch>
+<FilesMatch "\.(css|js|webp|avif|jpe?g|png|svg|woff2?)$">
+Header set Cache-Control "public, max-age=31536000, immutable"
+</FilesMatch>
 </IfModule>
 
 <IfModule mod_deflate.c>

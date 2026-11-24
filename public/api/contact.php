@@ -7,7 +7,7 @@
  * Aucune donnée n'est stockée ni journalisée.
  *
  * Réglages : modifier les trois constantes ci-dessous si besoin.
- * Prérequis : PHP 8.1 ou plus récent.
+ * Compatible PHP 7.4 et plus récent.
  */
 
 const MAIL_TO   = 'contact@financiale.fr';            // destinataire des demandes
@@ -16,9 +16,9 @@ const ALLOWED_HOSTS = ['www.financiale-corporate.fr', 'financiale-corporate.fr',
 
 header('X-Robots-Tag: noindex');
 
-$wantsJson = str_contains($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json');
+$wantsJson = strpos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false;
 
-function reply(int $status, array $body, bool $json): never {
+function reply(int $status, array $body, bool $json): void {
     if ($json) {
         http_response_code($status);
         header('Content-Type: application/json; charset=utf-8');
@@ -68,7 +68,8 @@ $fields = [
 $clean = [];
 foreach ($fields as $name => [$label, $required, $max]) {
     $value = trim((string) ($_POST[$name] ?? ''));
-    $value = mb_substr(str_replace("\0", '', $value), 0, $max);
+    $value = str_replace("\0", '', $value);
+    $value = function_exists('mb_substr') ? mb_substr($value, 0, $max) : substr($value, 0, $max);
     if ($required && $value === '') {
         reply(422, ['ok' => false, 'error' => "missing_$name"], $wantsJson);
     }
