@@ -122,7 +122,7 @@ Header set Cache-Control "public, max-age=31536000, immutable"
 AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml
 </IfModule>
 
-# Ne jamais servir de fichiers cachés (.git, .env…)
-<FilesMatch "^\.">
+# Ne jamais servir de fichiers cachés (.git, .env…) ni la configuration SMTP
+<FilesMatch "^(\..*|smtp-config\.php)$">
 Require all denied
 </FilesMatch>

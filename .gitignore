@@ -6,3 +6,4 @@ form-handler/.env
 form-handler/node_modules/
 .DS_Store
 *.log
+public/api/smtp-config.php

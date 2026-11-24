@@ -14,6 +14,20 @@ const MAIL_TO   = 'contact@financiale.fr';            // destinataire des demand
 const MAIL_FROM = 'gestion@financiale-corporate.fr';  // doit être une adresse du domaine hébergé
 const ALLOWED_HOSTS = ['www.financiale-corporate.fr', 'financiale-corporate.fr', 'www.financiale.fr', 'financiale.fr'];
 
+/*
+ * Envoi par SMTP authentifié (recommandé) : déposer sur le serveur, à côté de ce fichier,
+ * un fichier « smtp-config.php » (jamais dans Git) au format suivant :
+ *
+ *   <?php return [
+ *     'host' => 'smtp.exemple.fr', 'port' => 587, 'secure' => 'tls',   // 'tls' (587) ou 'ssl' (465)
+ *     'user' => 'adresse@domaine.fr', 'pass' => 'mot-de-passe',
+ *     'from' => 'adresse@domaine.fr', 'to' => 'contact@financiale.fr',
+ *   ];
+ *
+ * Sans ce fichier, la fonction mail() de l'hébergeur est utilisée (moins fiable : souvent classée en spam).
+ */
+$SMTP = is_file(__DIR__ . '/smtp-config.php') ? (require __DIR__ . '/smtp-config.php') : null;
+
 header('X-Robots-Tag: noindex');
 
 $wantsJson = strpos($_SERVER['HTTP_ACCEPT'] ?? '', 'application/json') !== false;
@@ -28,6 +42,46 @@ function reply(int $status, array $body, bool $json): void {
         header('Location: /contact?' . ($status < 300 ? 'envoye=1' : 'erreur=1') . '#contenu', true, 303);
     }
     exit;
+}
+
+/** Client SMTP minimal (STARTTLS / SSL + AUTH LOGIN), sans dépendance. Renvoie true si le message est accepté. */
+function smtp_send(array $c, string $to, string $subject, string $body, string $replyTo): bool {
+    $secure = $c['secure'] ?? 'tls';
+    $host = ($secure === 'ssl' ? 'ssl://' : '') . $c['host'];
+    $fp = @stream_socket_client($host . ':' . (int) ($c['port'] ?? 587), $errno, $errstr, 15);
+    if (!$fp) { error_log("contact SMTP: connexion impossible ($errstr)"); return false; }
+    stream_set_timeout($fp, 15);
+    $read = function () use ($fp) { $data = ''; while (($line = fgets($fp, 515)) !== false) { $data .= $line; if (isset($line[3]) && $line[3] === ' ') break; } return $data; };
+    $cmd = function (string $line, string $expect) use ($fp, $read) { fwrite($fp, $line . "\r\n"); $r = $read(); if (strpos($r, $expect) !== 0) { error_log('contact SMTP: ' . trim(explode("\r\n", $r)[0])); return false; } return true; };
+    $ehlo = 'EHLO ' . ($_SERVER['SERVER_NAME'] ?? 'localhost');
+    if (strpos($read(), '220') !== 0) return false;
+    if (!$cmd($ehlo, '250')) return false;
+    if ($secure === 'tls') {
+        if (!$cmd('STARTTLS', '220')) return false;
+        if (!stream_socket_enable_crypto($fp, true, STREAM_CRYPTO_METHOD_TLSv1_2_CLIENT | STREAM_CRYPTO_METHOD_TLSv1_3_CLIENT)) { error_log('contact SMTP: échec TLS'); return false; }
+        if (!$cmd($ehlo, '250')) return false;
+    }
+    if (!empty($c['user'])) {
+        if (!$cmd('AUTH LOGIN', '334') || !$cmd(base64_encode($c['user']), '334') || !$cmd(base64_encode($c['pass']), '235')) return false;
+    }
+    $from = $c['from'] ?? $c['user'];
+    if (!$cmd("MAIL FROM:<$from>", '250') || !$cmd("RCPT TO:<$to>", '25') || !$cmd('DATA', '354')) return false;
+    $headers = [
+        'Date: ' . date('r'),
+        'From: Site Financiale <' . $from . '>',
+        'To: <' . $to . '>',
+        'Reply-To: ' . $replyTo,
+        'Subject: =?UTF-8?B?' . base64_encode($subject) . '?=',
+        'Message-ID: <' . bin2hex(random_bytes(12)) . '@' . substr(strrchr($from, '@'), 1) . '>',
+        'MIME-Version: 1.0',
+        'Content-Type: text/plain; charset=UTF-8',
+        'Content-Transfer-Encoding: base64',
+    ];
+    $data = implode("\r\n", $headers) . "\r\n\r\n" . chunk_split(base64_encode($body));
+    if (!$cmd($data . "\r\n.", '250')) return false;
+    $cmd('QUIT', '221');
+    fclose($fp);
+    return true;
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
@@ -97,7 +151,11 @@ $headers = [
     'MIME-Version' => '1.0',
 ];
 
-$sent = mail(MAIL_TO, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers, '-f' . MAIL_FROM);
+if ($SMTP) {
+    $sent = smtp_send($SMTP, $SMTP['to'] ?? MAIL_TO, $subject, $body, $oneLine($clean['email']));
+} else {
+    $sent = mail(MAIL_TO, '=?UTF-8?B?' . base64_encode($subject) . '?=', $body, $headers, '-f' . MAIL_FROM);
+}
 
 $sent
     ? reply(200, ['ok' => true], $wantsJson)
