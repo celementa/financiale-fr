@@ -70,18 +70,24 @@ jobs:
           '
           echo "smtp-config.php créé"
 
-      - name: Envoi FTP (uniquement les fichiers modifiés)
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps          # FTP chiffré (TLS explicite), comme dans FileZilla
-          port: 21
-          security: loose         # le certificat du serveur mutualisé ne porte pas le nom de l'IP
-          local-dir: ./dist/
-          server-dir: ./          # la racine FTP est la racine du site
-          exclude: |
-            **/.DS_Store
-            **/.git*
-            **/.git*/**
+      # Envoi FTP chiffré avec lftp (gère la réutilisation de session TLS exigée par cPanel,
+      # que l'action FTP-Deploy-Action ne supporte pas : erreur « ECONNRESET (data socket) »).
+      # - /_astro : fichiers à empreinte (nom unique par version) -> seuls les fichiers absents sont envoyés
+      # - reste du site : pages HTML, .htaccess, api/ -> toujours renvoyés (quelques centaines de Ko)
+      # Les fichiers de l'hébergeur (.user.ini, cgi-bin, .well-known…) ne sont jamais supprimés.
+      - name: Envoi FTP (lftp, FTPS)
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp >/dev/null
+          find dist -name .DS_Store -delete
+          lftp -c "
+            set ftp:ssl-force true; set ftp:ssl-protect-data true; set ftp:ssl-protect-list true;
+            set ssl:verify-certificate no; set ftp:passive-mode true;
+            set net:timeout 30; set net:max-retries 3; set net:reconnect-interval-base 5;
+            open --env-password -u \"$FTP_USERNAME\" ftp://$FTP_SERVER;
+            mirror --reverse --only-missing --no-perms --parallel=4 --verbose=1 dist/_astro _astro;
+            mirror --reverse --no-perms --parallel=4 --verbose=1 --exclude ^_astro/ dist/ ./
+          "
